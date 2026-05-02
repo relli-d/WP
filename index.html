@@ -1,9 +1,266 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name — Artist</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Hello world!</h1>
+ 
+  <!-- ══════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════ -->
+  <header class="nav-header">
+    <div class="nav-logo">YN</div>
+    <nav class="nav-menu">
+      <a href="#home"      class="nav-link active" data-page="home">Home</a>
+      <a href="#portfolio" class="nav-link"         data-page="portfolio">Portfolio</a>
+      <a href="#about"     class="nav-link"         data-page="about">About</a>
+      <a href="#contact"   class="nav-link"         data-page="contact">Contact</a>
+    </nav>
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+ 
+  <!-- ══════════════════════════════════════
+       MOBILE MENU OVERLAY
+  ══════════════════════════════════════ -->
+  <div class="mobile-overlay">
+    <nav class="mobile-nav">
+      <a href="#home"      class="mobile-link" data-page="home">Home</a>
+      <a href="#portfolio" class="mobile-link" data-page="portfolio">Portfolio</a>
+      <a href="#about"     class="mobile-link" data-page="about">About</a>
+      <a href="#contact"   class="mobile-link" data-page="contact">Contact</a>
+    </nav>
+  </div>
+ 
+  <!-- ══════════════════════════════════════
+       PAGE: HOME (LANDING)
+  ══════════════════════════════════════ -->
+  <section id="home" class="page page--active">
+    <div class="hero">
+      <p class="hero-eyebrow">Visual Artist · Milan</p>
+      <h1 class="hero-title">
+        <span class="hero-title__line">Your</span>
+        <span class="hero-title__line hero-title__line--italic">Name</span>
+      </h1>
+      <p class="hero-tagline">A one-line description of your art and practice.</p>
+      <a href="#portfolio" class="hero-cta" data-page="portfolio">View Work ↗</a>
+    </div>
+    <div class="hero-decoration" aria-hidden="true">
+      <div class="deco-circle"></div>
+      <div class="deco-line"></div>
+    </div>
+  </section>
+ 
+  <!-- ══════════════════════════════════════
+       PAGE: PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section id="portfolio" class="page">
+    <div class="page-inner">
+      <header class="page-header">
+        <h2 class="page-title">Portfolio</h2>
+        <div class="portfolio-filter">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">Painting</button>
+          <button class="filter-btn">Photography</button>
+          <button class="filter-btn">Digital</button>
+        </div>
+      </header>
+ 
+      <div class="portfolio-grid">
+        <!-- Repeat/replace these cards with your actual works -->
+        <article class="portfolio-card">
+          <div class="portfolio-card__image">
+            <div class="img-placeholder"></div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 class="portfolio-card__title">Artwork Title</h3>
+            <p class="portfolio-card__meta">Medium · Year</p>
+          </div>
+        </article>
+ 
+        <article class="portfolio-card portfolio-card--tall">
+          <div class="portfolio-card__image">
+            <div class="img-placeholder"></div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 class="portfolio-card__title">Artwork Title</h3>
+            <p class="portfolio-card__meta">Medium · Year</p>
+          </div>
+        </article>
+ 
+        <article class="portfolio-card">
+          <div class="portfolio-card__image">
+            <div class="img-placeholder"></div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 class="portfolio-card__title">Artwork Title</h3>
+            <p class="portfolio-card__meta">Medium · Year</p>
+          </div>
+        </article>
+ 
+        <article class="portfolio-card portfolio-card--wide">
+          <div class="portfolio-card__image">
+            <div class="img-placeholder"></div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 class="portfolio-card__title">Artwork Title</h3>
+            <p class="portfolio-card__meta">Medium · Year</p>
+          </div>
+        </article>
+ 
+        <article class="portfolio-card">
+          <div class="portfolio-card__image">
+            <div class="img-placeholder"></div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 class="portfolio-card__title">Artwork Title</h3>
+            <p class="portfolio-card__meta">Medium · Year</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ══════════════════════════════════════
+       PAGE: ABOUT
+  ══════════════════════════════════════ -->
+  <section id="about" class="page">
+    <div class="page-inner page-inner--split">
+      <div class="about-image-col">
+        <div class="about-image-frame">
+          <div class="img-placeholder"></div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <h2 class="page-title">About</h2>
+        <p class="about-body">
+          Write a short, personal introduction here. Who are you?
+          Where do you work? What drives your practice?
+        </p>
+        <p class="about-body">
+          A second paragraph about your influences, exhibitions,
+          residencies, or anything else you'd like to share.
+        </p>
+        <div class="about-details">
+          <div class="about-detail">
+            <span class="about-detail__label">Based in</span>
+            <span class="about-detail__value">City, Country</span>
+          </div>
+          <div class="about-detail">
+            <span class="about-detail__label">Medium</span>
+            <span class="about-detail__value">Painting, Photography</span>
+          </div>
+          <div class="about-detail">
+            <span class="about-detail__label">Represented by</span>
+            <span class="about-detail__value">Gallery Name</span>
+          </div>
+        </div>
+        <a href="#" class="btn-outline">Download CV</a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ══════════════════════════════════════
+       PAGE: CONTACT
+  ══════════════════════════════════════ -->
+  <section id="contact" class="page">
+    <div class="page-inner page-inner--narrow">
+      <h2 class="page-title">Get in touch</h2>
+      <p class="contact-intro">
+        For commissions, exhibitions, collaborations, or press inquiries.
+      </p>
+      <form class="contact-form" novalidate>
+        <div class="form-row">
+          <label class="form-label" for="name">Name</label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="Your name" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">Email</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message →</button>
+      </form>
+      <div class="contact-links">
+        <a href="mailto:you@email.com" class="contact-link">you@email.com</a>
+        <a href="https://instagram.com/yourhandle" class="contact-link" target="_blank">Instagram ↗</a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Your Name</span>
+    <span>All rights reserved</span>
+  </footer>
+ 
+  <script>
+    // ── Year ──────────────────────────────
+    document.getElementById('year').textContent = new Date().getFullYear();
+ 
+    // ── SPA-style page switching ──────────
+    const pages   = document.querySelectorAll('.page');
+    const navLinks = document.querySelectorAll('[data-page]');
+ 
+    function showPage(id) {
+      pages.forEach(p => p.classList.remove('page--active'));
+      navLinks.forEach(l => l.classList.remove('active'));
+ 
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('page--active');
+        target.classList.add('page--enter');
+        setTimeout(() => target.classList.remove('page--enter'), 600);
+      }
+ 
+      navLinks.forEach(l => {
+        if (l.dataset.page === id) l.classList.add('active');
+      });
+ 
+      closeMobileMenu();
+    }
+ 
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        showPage(link.dataset.page);
+      });
+    });
+ 
+    // ── Mobile menu ───────────────────────
+    const hamburger    = document.querySelector('.nav-hamburger');
+    const mobileOverlay = document.querySelector('.mobile-overlay');
+ 
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+    });
+ 
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileOverlay.classList.remove('open');
+    }
+ 
+    // ── Portfolio filter (skeleton) ───────
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // TODO: filter cards by category
+      });
+    });
+  </script>
 </body>
 </html>

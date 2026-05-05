@@ -3,264 +3,698 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name — Artist</title>
+  <title>The Art of Davide Morelli</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Libre+Franklin:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
 </head>
 <body>
- 
+
   <!-- ══════════════════════════════════════
-       NAVIGATION
+       NAVIGATION — 3-column layout
+       [empty] | Site Title | Nav Links
   ══════════════════════════════════════ -->
-  <header class="nav-header">
-    <div class="nav-logo">YN</div>
+  <header class="nav-header nav-header--hidden" id="nav">
+    <div class="nav-left">
+        <!-- HOME TITLE BUTTON -->
+        <a class="nav-title" data-page="home">
+          The Art of Davide Morelli
+        </a>
+
+        <!-- HAMBURGER -->
+        <button class="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="nav-title-placeholder"></div>
     <nav class="nav-menu">
-      <a href="#home"      class="nav-link active" data-page="home">Home</a>
-      <a href="#portfolio" class="nav-link"         data-page="portfolio">Portfolio</a>
-      <a href="#about"     class="nav-link"         data-page="about">About</a>
-      <a href="#contact"   class="nav-link"         data-page="contact">Contact</a>
+      <a class="nav-link" data-page="portfolio">Portfolio</a>
+      <a class="nav-link nav-link--secret" data-page="topsecret">TOP SECRET</a>
+      <a class="nav-link" data-page="about">About</a>
+      <a class="nav-link" data-page="contact">Contact</a>
     </nav>
-    <button class="nav-hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
   </header>
- 
-  <!-- ══════════════════════════════════════
-       MOBILE MENU OVERLAY
-  ══════════════════════════════════════ -->
+
+  <!-- Mobile overlay -->
   <div class="mobile-overlay">
     <nav class="mobile-nav">
-      <a href="#home"      class="mobile-link" data-page="home">Home</a>
-      <a href="#portfolio" class="mobile-link" data-page="portfolio">Portfolio</a>
-      <a href="#about"     class="mobile-link" data-page="about">About</a>
-      <a href="#contact"   class="mobile-link" data-page="contact">Contact</a>
+      <a class="mobile-link" data-page="home">Home</a>
+      <a class="mobile-link" data-page="portfolio">Portfolio</a>
+      <a class="mobile-link" data-page="about">About</a>
+      <a class="mobile-link mobile-link--secret" data-page="topsecret">TOP SECRET</a>
+      <a class="mobile-link" data-page="contact">Contact</a>
     </nav>
   </div>
- 
+
+
   <!-- ══════════════════════════════════════
-       PAGE: HOME (LANDING)
+       PAGE: HOME — Full-scroll hero
   ══════════════════════════════════════ -->
-  <section id="home" class="page page--active">
-    <div class="hero">
-      <p class="hero-eyebrow">Visual Artist · Milan</p>
-      <h1 class="hero-title">
-        <span class="hero-title__line">Your</span>
-        <span class="hero-title__line hero-title__line--italic">Name</span>
-      </h1>
-      <p class="hero-tagline">A one-line description of your art and practice.</p>
-      <a href="#portfolio" class="hero-cta" data-page="portfolio">View Work ↗</a>
-    </div>
-    <div class="hero-decoration" aria-hidden="true">
-      <div class="deco-circle"></div>
-      <div class="deco-line"></div>
-    </div>
-  </section>
- 
-  <!-- ══════════════════════════════════════
-       PAGE: PORTFOLIO
-  ══════════════════════════════════════ -->
-  <section id="portfolio" class="page">
-    <div class="page-inner">
-      <header class="page-header">
-        <h2 class="page-title">Portfolio</h2>
-        <div class="portfolio-filter">
-          <button class="filter-btn active">All</button>
-          <button class="filter-btn">Painting</button>
-          <button class="filter-btn">Photography</button>
-          <button class="filter-btn">Digital</button>
+  <section id="home" class="page page--active page--home">
+
+    <!-- HERO First Image of the page -->
+    <div class="scroll-hero">
+      <img
+        src="images/Landing.JPG"
+        alt="The Art of Davide Morelli"
+        class="scroll-hero__img"
+        draggable="false"
+      />
+      <!-- Title overlay at bottom left of image -->
+      <div class="home-title-reveal" id="titleReveal">
+        <div class="home-title-inner">
+          <p class="home-title-eyebrow">Visual Artist · Milan</p>
+          <h1 class="home-big-title">
+            <span class="home-big-title__line">The Art of</span>
+            <span class="home-big-title__line home-big-title__line--accent">Davide</span>
+            <span class="home-big-title__line home-big-title__line--accent">Morelli</span>
+          </h1>
+          <div class="home-title-bar"></div>
+          <a class="btn-yellow" data-page="portfolio">Explore Portfolio →</a>
         </div>
-      </header>
- 
-      <div class="portfolio-grid">
-        <!-- Repeat/replace these cards with your actual works -->
-        <article class="portfolio-card">
-          <div class="portfolio-card__image">
-            <div class="img-placeholder"></div>
-          </div>
-          <div class="portfolio-card__info">
-            <h3 class="portfolio-card__title">Artwork Title</h3>
-            <p class="portfolio-card__meta">Medium · Year</p>
-          </div>
-        </article>
- 
-        <article class="portfolio-card portfolio-card--tall">
-          <div class="portfolio-card__image">
-            <div class="img-placeholder"></div>
-          </div>
-          <div class="portfolio-card__info">
-            <h3 class="portfolio-card__title">Artwork Title</h3>
-            <p class="portfolio-card__meta">Medium · Year</p>
-          </div>
-        </article>
- 
-        <article class="portfolio-card">
-          <div class="portfolio-card__image">
-            <div class="img-placeholder"></div>
-          </div>
-          <div class="portfolio-card__info">
-            <h3 class="portfolio-card__title">Artwork Title</h3>
-            <p class="portfolio-card__meta">Medium · Year</p>
-          </div>
-        </article>
- 
-        <article class="portfolio-card portfolio-card--wide">
-          <div class="portfolio-card__image">
-            <div class="img-placeholder"></div>
-          </div>
-          <div class="portfolio-card__info">
-            <h3 class="portfolio-card__title">Artwork Title</h3>
-            <p class="portfolio-card__meta">Medium · Year</p>
-          </div>
-        </article>
- 
-        <article class="portfolio-card">
-          <div class="portfolio-card__image">
-            <div class="img-placeholder"></div>
-          </div>
-          <div class="portfolio-card__info">
-            <h3 class="portfolio-card__title">Artwork Title</h3>
-            <p class="portfolio-card__meta">Medium · Year</p>
-          </div>
-        </article>
       </div>
     </div>
+  
+    <!-- SECTION 2 -->
+    <section class="fullscreen-banner">
+      <img
+        src="images/SecondBanner.JPG"
+        alt="Creative Process"
+        class="fullscreen-banner__img"
+      />
+
+      <div class="fullscreen-banner__overlay">
+        <div class="fullscreen-banner__content">
+          <p class="fullscreen-banner__eyebrow">
+            Contemporary Expression
+          </p>
+
+          <h2 class="fullscreen-banner__title">
+            Art Beyond the Canvas
+          </h2>
+
+          <p class="fullscreen-banner__text">
+            A visual exploration of emotion, texture, and atmosphere.
+          </p>
+
+          <a href="#" class="btn-yellow">
+            Discover More →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3
+    <section class="fullscreen-banner">
+      <img
+        src="images/banner-3.jpg"
+        alt="Gallery"
+        class="fullscreen-banner__img"
+      />
+
+      <div class="fullscreen-banner__overlay">
+        <div class="fullscreen-banner__content">
+          <p class="fullscreen-banner__eyebrow">
+            New Collection
+          </p>
+
+          <h2 class="fullscreen-banner__title">
+            Shapes of Silence
+          </h2>
+
+          <p class="fullscreen-banner__text">
+            Minimal forms and cinematic light studies.
+          </p>
+        </div>
+      </div>
+    </section> -->
   </section>
- 
+<!-- ══════════════════════════════════════
+     PAGE: PORTFOLIO
+══════════════════════════════════════ -->
+<section id="portfolio" class="page">
+
+  <div class="page-inner">
+
+    <div class="section-heading">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="title-bar"></div>
+    </div>
+
+    <!-- PAPER STACK GRID -->
+    <div class="paper-stack-grid">
+
+      <!-- STACK 1 -->
+      <a class="paper-stack" data-page="project-comics">
+
+        <div class="paper-stack__layers">
+
+          <div class="paper-sheet paper-sheet--3"></div>
+          <div class="paper-sheet paper-sheet--2"></div>
+          <div class="paper-sheet paper-sheet--1"></div>
+
+          <!-- TOP COVER -->
+          <div class="paper-cover">
+            <img
+              src="images/portfolios/LFS_Cover.JPG"
+              alt="Comics Project"
+              class="paper-cover__img"
+            />
+          </div>
+
+        </div>
+
+        <div class="paper-stack__meta">
+          <h3 class="paper-stack__title">Lu Free Spirit</h3>
+          <p class="paper-stack__subtitle">
+            Comics series
+          </p>
+        </div>
+
+      </a>
+
+      <!-- STACK 2 -->
+      <a class="paper-stack" data-page="project-illustration">
+
+        <div class="paper-stack__layers">
+
+          <div class="paper-sheet paper-sheet--3"></div>
+          <div class="paper-sheet paper-sheet--2"></div>
+          <div class="paper-sheet paper-sheet--1"></div>
+
+          <div class="paper-cover">
+            <img
+              src="images/portfolios/Caricature_Cover.JPG"
+              alt="Illustration"
+              class="paper-cover__img"
+            />
+          </div>
+
+        </div>
+
+        <div class="paper-stack__meta">
+          <h3 class="paper-stack__title">Caricatures</h3>
+          <p class="paper-stack__subtitle">
+            Commissioned portraits for graduation parties
+          </p>
+        </div>
+
+      </a>
+
+      <!-- STACK 3
+      <a class="paper-stack" data-page="project-digital">
+
+        <div class="paper-stack__layers">
+
+          <div class="paper-sheet paper-sheet--3"></div>
+          <div class="paper-sheet paper-sheet--2"></div>
+          <div class="paper-sheet paper-sheet--1"></div>
+
+          <div class="paper-cover">
+            <img
+              src="images/project3.jpg"
+              alt="Digital Art"
+              class="paper-cover__img"
+            />
+          </div>
+
+        </div>
+
+        <div class="paper-stack__meta">
+          <h3 class="paper-stack__title">Digital</h3>
+          <p class="paper-stack__subtitle">
+            Experiments in light and texture
+          </p>
+        </div>
+
+      </a> -->
+
+    </div>
+
+  </div>
+
+</section>
+
+
   <!-- ══════════════════════════════════════
        PAGE: ABOUT
   ══════════════════════════════════════ -->
   <section id="about" class="page">
     <div class="page-inner page-inner--split">
-      <div class="about-image-col">
-        <div class="about-image-frame">
-          <div class="img-placeholder"></div>
+      <div class="about-img-col">
+        <div class="about-img-wrap">
+          <div class="img-ph"></div>
+          <div class="about-img-border"></div>
         </div>
       </div>
       <div class="about-text-col">
-        <h2 class="page-title">About</h2>
-        <p class="about-body">
-          Write a short, personal introduction here. Who are you?
-          Where do you work? What drives your practice?
-        </p>
-        <p class="about-body">
-          A second paragraph about your influences, exhibitions,
-          residencies, or anything else you'd like to share.
-        </p>
-        <div class="about-details">
-          <div class="about-detail">
-            <span class="about-detail__label">Based in</span>
-            <span class="about-detail__value">City, Country</span>
-          </div>
-          <div class="about-detail">
-            <span class="about-detail__label">Medium</span>
-            <span class="about-detail__value">Painting, Photography</span>
-          </div>
-          <div class="about-detail">
-            <span class="about-detail__label">Represented by</span>
-            <span class="about-detail__value">Gallery Name</span>
-          </div>
+        <div class="section-heading">
+          <h2 class="section-title">About</h2>
+          <div class="title-bar"></div>
         </div>
-        <a href="#" class="btn-outline">Download CV</a>
+        <p class="body-text">
+          Anyone can draw, 
+        </p>
+        <p class="body-text">
+          A second paragraph about your influences, exhibitions,
+          residencies, awards, or anything else that defines your journey.
+        </p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat__num">10+</span><span class="stat__label">Years</span></div>
+          <div class="stat"><span class="stat__num">50+</span><span class="stat__label">Works</span></div>
+          <div class="stat"><span class="stat__num">12</span><span class="stat__label">Exhibitions</span></div>
+        </div>
+        <div class="about-details">
+          <div class="about-row"><span class="about-row__k">Based in</span><span class="about-row__v">Milan, Italy</span></div>
+          <div class="about-row"><span class="about-row__k">Medium</span><span class="about-row__v">Comics · Illustration</span></div>
+          <div class="about-row"><span class="about-row__k">Instagram</span><span class="about-row__v">@lufreespirit</span></div>
+        </div>
+        <a href="#" class="btn-outline">Download CV ↗</a>
       </div>
     </div>
   </section>
- 
+
+
+  <!-- ══════════════════════════════════════
+       PAGE: TOP SECRET — LOCK SCREEN
+  ══════════════════════════════════════ -->
+  <section id="topsecret" class="page page--secret">
+    <div class="secret-tape secret-tape--top" aria-hidden="true">CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp;</div>
+
+    <div class="secret-lock">
+      <div class="secret-badge">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <rect x="1.5" y="1.5" width="77" height="77" rx="38.5" stroke="#F5C518" stroke-width="3"/>
+          <path d="M27 37V29C27 21.268 33.268 15 41 15C48.732 15 55 21.268 55 29V37" stroke="#F5C518" stroke-width="3" stroke-linecap="round"/>
+          <rect x="20" y="37" width="42" height="30" rx="5" stroke="#F5C518" stroke-width="3"/>
+          <circle cx="41" cy="52" r="5" fill="#F5C518"/>
+          <line x1="41" y1="57" x2="41" y2="63" stroke="#F5C518" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h2 class="secret-title">TOP SECRET</h2>
+      <p class="secret-sub">Clearance required. Enter access code to proceed.</p>
+      <div class="secret-form">
+        <div class="secret-input-wrap">
+          <input id="passwordInput" class="secret-input" type="password" placeholder="Enter access code" autocomplete="off"/>
+        </div>
+        <button class="btn-yellow" id="unlockBtn">Unlock →</button>
+        <p class="secret-error" id="secretError">⚠&nbsp; ACCESS DENIED. Wrong code.</p>
+      </div>
+    </div>
+
+    <div class="secret-tape secret-tape--bottom" aria-hidden="true">CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp;</div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE: TOP SECRET — INNER CONTENT
+  ══════════════════════════════════════ -->
+  <section id="secretContent" class="page">
+    <div class="page-inner page-inner--narrow">
+      <div class="secret-unlocked-row">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#F5C518" stroke-width="2"/><path d="M12 20l6 6 10-12" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="secret-unlocked-label">Access Granted</span>
+      </div>
+      <div class="section-heading">
+        <h2 class="section-title">Classified</h2>
+        <div class="title-bar"></div>
+      </div>
+      <p class="body-text">Welcome to the inner circle. This page is for your eyes only.</p>
+      <div class="secret-grid">
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Work In Progress · 2024</p></div>
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Unreleased Study · 2024</p></div>
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Client Preview · 2024</p></div>
+      </div>
+      <button class="btn-outline" id="lockAgainBtn">🔒 Lock Again</button>
+    </div>
+  </section>
+
+
   <!-- ══════════════════════════════════════
        PAGE: CONTACT
   ══════════════════════════════════════ -->
   <section id="contact" class="page">
     <div class="page-inner page-inner--narrow">
-      <h2 class="page-title">Get in touch</h2>
-      <p class="contact-intro">
-        For commissions, exhibitions, collaborations, or press inquiries.
-      </p>
+      <div class="section-heading">
+        <h2 class="section-title">Contact</h2>
+        <div class="title-bar"></div>
+      </div>
+      <p class="body-text contact-intro">For commissions, exhibitions, collaborations, and press inquiries.</p>
       <form class="contact-form" novalidate>
         <div class="form-row">
-          <label class="form-label" for="name">Name</label>
-          <input class="form-input" type="text" id="name" name="name" placeholder="Your name" />
+          <label class="form-label" for="fname">Name</label>
+          <input class="form-input" type="text" id="fname" placeholder="Your name" />
         </div>
         <div class="form-row">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" />
+          <label class="form-label" for="femail">Email</label>
+          <input class="form-input" type="email" id="femail" placeholder="your@email.com" />
         </div>
         <div class="form-row">
-          <label class="form-label" for="message">Message</label>
-          <textarea class="form-input form-textarea" id="message" name="message" placeholder="Tell me about your project…"></textarea>
+          <label class="form-label" for="fmsg">Message</label>
+          <textarea class="form-input form-textarea" id="fmsg" placeholder="Tell me about your project…"></textarea>
         </div>
-        <button type="submit" class="btn-submit">Send Message →</button>
+        <button type="submit" class="btn-yellow">Send Message →</button>
       </form>
       <div class="contact-links">
-        <a href="mailto:you@email.com" class="contact-link">you@email.com</a>
-        <a href="https://instagram.com/yourhandle" class="contact-link" target="_blank">Instagram ↗</a>
+        <a href="mailto:you@email.com" class="contact-link">davide@email.com</a>
+        <a href="https://instagram.com/lufreespirit" class="contact-link" target="_blank">@lufreespirit ↗</a>
       </div>
     </div>
   </section>
- 
+
+
   <!-- ══════════════════════════════════════
        FOOTER
   ══════════════════════════════════════ -->
   <footer class="site-footer">
-    <span>© <span id="year"></span> Your Name</span>
-    <span>All rights reserved</span>
+    <span class="footer-name">The Art of Davide Morelli</span>
+    <span class="footer-copy">© <span id="year"></span>. All rights reserved.</span>
+    <div class="footer-links">
+      <a class="footer-link" data-page="portfolio">Portfolio</a>
+      <a class="footer-link" data-page="contact">Contact</a>
+    </div>
   </footer>
- 
+
+
+  <!-- ══════════════════════════════════════
+       PROJECT PAGE: LU FREE SPIRIT
+  ══════════════════════════════════════ -->
+  <section id="project-comics" class="page project-page">
+    <div class="project-page__inner">
+
+      <!-- Back + breadcrumb -->
+      <nav class="project-breadcrumb">
+        <a class="project-back" data-page="portfolio">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Portfolio
+        </a>
+        <span class="project-breadcrumb__sep">/</span>
+        <span class="project-breadcrumb__current">Lu Free Spirit</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="project-header">
+        <div class="project-header__meta">
+          <span class="project-tag">Comics Series</span>
+          <span class="project-tag">2022 — ongoing</span>
+        </div>
+        <h1 class="project-title">Lu Free Spirit</h1>
+        <div class="title-bar"></div>
+        <p class="project-description">
+          Lu Free Spirit is an ongoing webcomic following a group of friends navigating
+          creativity, friendship, and everyday chaos. Each episode is hand-drawn with an
+          expressive line and a playful palette — part slice-of-life, part absurdist comedy.
+          The series is published regularly on Instagram <a href="https://instagram.com/lufreespirit" class="project-link" target="_blank">@lufreespirit</a>.
+        </p>
+      </header>
+
+      <!-- Pinterest-style masonry gallery -->
+      <div class="masonry-grid">
+        <!-- Replace src values with your actual episode/artwork images -->
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/01.jpg" alt="Lu Free Spirit — Episode 1" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/02.jpg" alt="Lu Free Spirit — Episode 2" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/03.jpg" alt="Lu Free Spirit — Episode 3" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/04.jpg" alt="Lu Free Spirit — Episode 4" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/05.jpg" alt="Lu Free Spirit — Episode 5" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/06.jpg" alt="Lu Free Spirit — Episode 6" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/07.jpg" alt="Lu Free Spirit — Episode 7" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/08.jpg" alt="Lu Free Spirit — Episode 8" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/comics/09.jpg" alt="Lu Free Spirit — Episode 9" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="project-footer-cta">
+        <p class="body-text">Want to follow the series or commission a collaboration?</p>
+        <div class="project-footer-cta__btns">
+          <a href="https://instagram.com/lufreespirit" class="btn-yellow" target="_blank">Follow on Instagram ↗</a>
+          <a class="btn-outline" data-page="contact">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PROJECT PAGE: CARICATURES
+  ══════════════════════════════════════ -->
+  <section id="project-illustration" class="page project-page">
+    <div class="project-page__inner">
+
+      <!-- Back + breadcrumb -->
+      <nav class="project-breadcrumb">
+        <a class="project-back" data-page="portfolio">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Portfolio
+        </a>
+        <span class="project-breadcrumb__sep">/</span>
+        <span class="project-breadcrumb__current">Caricatures</span>
+      </nav>
+
+      <!-- Header -->
+      <header class="project-header">
+        <div class="project-header__meta">
+          <span class="project-tag">Commissioned Portraits</span>
+          <span class="project-tag">2021 — ongoing</span>
+        </div>
+        <h1 class="project-title">Caricatures</h1>
+        <div class="title-bar"></div>
+        <p class="project-description">
+          A collection of commissioned caricature portraits created for graduation parties,
+          birthdays, and private events. Each piece is tailored to capture the personality
+          and likeness of the subject with a distinctive exaggerated style — warm, fun,
+          and immediately recognisable. Available for commissions; get in touch to discuss your event.
+        </p>
+      </header>
+
+      <!-- Pinterest-style masonry gallery -->
+      <div class="masonry-grid">
+        <!-- Replace src values with your actual caricature images -->
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/01.jpg" alt="Caricature portrait 1" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/02.jpg" alt="Caricature portrait 2" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/03.jpg" alt="Caricature portrait 3" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/04.jpg" alt="Caricature portrait 4" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/05.jpg" alt="Caricature portrait 5" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/06.jpg" alt="Caricature portrait 6" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/07.jpg" alt="Caricature portrait 7" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+        <div class="masonry-item">
+          <img src="images/portfolios/caricatures/08.jpg" alt="Caricature portrait 8" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
+        </div>
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="project-footer-cta">
+        <p class="body-text">Interested in a personalised caricature for your next event?</p>
+        <div class="project-footer-cta__btns">
+          <a class="btn-yellow" data-page="contact">Commission a Portrait →</a>
+          <a class="btn-outline" data-page="portfolio">Back to Portfolio</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
   <script>
-    // ── Year ──────────────────────────────
     document.getElementById('year').textContent = new Date().getFullYear();
- 
-    // ── SPA-style page switching ──────────
-    const pages   = document.querySelectorAll('.page');
-    const navLinks = document.querySelectorAll('[data-page]');
- 
+
+    // ── Page switching ────────────────────────────────────
+    const ALL_PAGES    = document.querySelectorAll('.page');
+    const ALL_NAVLINKS = document.querySelectorAll('[data-page]');
+
     function showPage(id) {
-      pages.forEach(p => p.classList.remove('page--active'));
-      navLinks.forEach(l => l.classList.remove('active'));
- 
+      ALL_PAGES.forEach(p => p.classList.remove('page--active'));
+      ALL_NAVLINKS.forEach(l => l.classList.remove('active'));
+
       const target = document.getElementById(id);
       if (target) {
         target.classList.add('page--active');
         target.classList.add('page--enter');
         setTimeout(() => target.classList.remove('page--enter'), 600);
       }
- 
-      navLinks.forEach(l => {
+      ALL_NAVLINKS.forEach(l => {
         if (l.dataset.page === id) l.classList.add('active');
       });
- 
-      closeMobileMenu();
+
+      // reset scroll on page change (but not home — let user scroll hero)
+      if (id !== 'home') window.scrollTo(0, 0);
+
+      // reset title reveal if going back to home
+      if (id === 'home') {
+        const rev = document.getElementById('titleReveal');
+        rev.classList.remove('is-visible');
+        window.scrollTo(0, 0);
+      }
+
+      updateNav();
+      closeMobile();
     }
- 
-    navLinks.forEach(link => {
+
+    ALL_NAVLINKS.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        showPage(link.dataset.page);
+        const p = link.dataset.page;
+        if (p) showPage(p);
       });
     });
- 
-    // ── Mobile menu ───────────────────────
-    const hamburger    = document.querySelector('.nav-hamburger');
-    const mobileOverlay = document.querySelector('.mobile-overlay');
- 
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileOverlay.classList.toggle('open');
+
+    // ── Mobile hamburger ──────────────────────────────────
+    const ham = document.querySelector('.nav-hamburger');
+    const mob = document.querySelector('.mobile-overlay');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
     });
- 
-    function closeMobileMenu() {
-      hamburger.classList.remove('open');
-      mobileOverlay.classList.remove('open');
+    function closeMobile() {
+      ham.classList.remove('open');
+      mob.classList.remove('open');
     }
- 
-    // ── Portfolio filter (skeleton) ───────
+
+    // ── Nav: glass, hide-on-scroll-down, title toggle ─────
+    const navEl    = document.getElementById('nav');
+    let navHasAppeared = false;
+    let lastScrollY = window.scrollY;
+    function updateNav() {
+      const onHome = document.getElementById('home').classList.contains('page--active');
+      // Only run on home page
+      if (!onHome) {
+        navEl.classList.remove('nav-header--hidden');
+        navHasAppeared = false;
+        return;
+      }
+      // If nav hasn't appeared yet, keep it hidden until user scrolls down and then up
+      if (!navHasAppeared) {
+        if (window.scrollY > 80 && window.scrollY < lastScrollY) {
+          navHasAppeared = true;
+          navEl.classList.remove('nav-header--hidden');
+        } else {
+          navEl.classList.add('nav-header--hidden');
+        }
+      } else {
+        navEl.classList.remove('nav-header--hidden');
+      }
+      lastScrollY = window.scrollY;
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // ── Title reveal at bottom of hero image ─────────────
+    const titleReveal = document.getElementById('titleReveal');
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            titleReveal.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealObserver.observe(titleReveal);
+
+    // ── Portfolio filter ───────────────────────────────────
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        // TODO: filter cards by category
       });
     });
+
+    // ── TOP SECRET password gate ──────────────────────────
+    const PASS    = 'password';
+    const unlBtn  = document.getElementById('unlockBtn');
+    const pwIn    = document.getElementById('passwordInput');
+    const pwErr   = document.getElementById('secretError');
+    const lockBtn = document.getElementById('lockAgainBtn');
+
+    unlBtn.addEventListener('click', tryUnlock);
+    pwIn.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+
+    function tryUnlock() {
+      if (pwIn.value === PASS) {
+        pwErr.style.display = 'none';
+        pwIn.value = '';
+        showPage('secretContent');
+      } else {
+        pwErr.style.display = 'block';
+        pwIn.classList.add('shake');
+        setTimeout(() => pwIn.classList.remove('shake'), 500);
+        pwIn.value = '';
+      }
+    }
+    lockBtn.addEventListener('click', () => showPage('topsecret'));
+
+    // ── Masonry image lightbox ─────────────────────────────
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightboxImg');
+    const lightboxClose= document.getElementById('lightboxClose');
+
+    document.addEventListener('click', e => {
+      const item = e.target.closest('.masonry-item img');
+      if (item && !item.closest('.masonry-item--ph')) {
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.alt;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
   </script>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="lightbox__close" aria-label="Close">&times;</button>
+    <div class="lightbox__stage">
+      <img id="lightboxImg" class="lightbox__img" src="" alt="" />
+    </div>
+  </div>
+
 </body>
 </html>

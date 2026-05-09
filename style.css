@@ -20,8 +20,9 @@
   --font-display: 'Fugaz One', Impact, sans-serif;
   --font-body:    'Libre Franklin', sans-serif;
 
-  --nav-h: 72px;
-  --ease:  cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --nav-h:    72px;
+  --tape-h:   40px;  /* height of each CAUTION band */
+  --ease:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ── Reset ────────────────────────────────────────────── */
@@ -42,12 +43,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ═══════════════════════════════════════════════════════
    UTILITIES
-   Compose these on HTML elements instead of writing
-   one-off classes for every section.
 ═══════════════════════════════════════════════════════ */
 
-/* Small uppercase tracking label.
-   Pair with .u-accent / .u-error for colour variants. */
+/* Small uppercase tracking label — pair with .u-accent / .u-error */
 .label {
   font-size: 10px;
   font-weight: 700;
@@ -58,8 +56,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .u-accent { color: var(--yellow) !important; }
 .u-error  { color: #ff4444 !important; }
 
-/* Pill chip — for tags, category indicators, etc.
-   Also the base palette for .nav-link--secret. */
+/* Pill chip — category tags, nav-link--secret base palette */
 .tag {
   display: inline-block;
   padding: 5px 14px;
@@ -98,6 +95,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   0%, 100% { filter: drop-shadow(0 0 8px rgba(245,197,24,.2)); }
   50%       { filter: drop-shadow(0 0 28px rgba(245,197,24,.55)); }
 }
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 .shake      { animation: shake .45s var(--ease); }
 .glow-badge { animation: glow 3s ease-in-out infinite; }
 
@@ -119,26 +120,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-bottom: 1px solid rgba(255,255,255,.08);
   transition: transform .4s var(--ease), opacity .4s var(--ease);
 }
-.nav-left  { flex: 1; display: flex; align-items: center; }
+.nav-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.nav-spacer { flex: 2; }
 .nav-title {
-  flex: 2;
   font-family: var(--font-display);
   font-size: clamp(14px, 1.6vw, 20px);
   letter-spacing: .08em;
   color: var(--yellow);
-  text-align: center;
   white-space: nowrap;
   transition: color .25s, opacity .35s, transform .35s;
 }
+.nav-title:hover { color: var(--white); }
 .nav-menu { flex: 2; display: flex; align-items: center; gap: 10px; justify-content: flex-end; }
 
-/* Slide bar away on scroll-down */
+/* Hide the whole bar (scroll-down on home) */
 .nav-header--hidden { transform: translateY(-100%); opacity: 0; pointer-events: none; }
 
-/* Hide title on home (it lives in the hero instead) */
+/* On sub-pages the nav-title is visible; on home it's replaced by the hero title */
 .nav-header--home .nav-title { opacity: 0; transform: translateY(-6px); pointer-events: none; }
 
-/* Nav pill buttons */
+/* Pill nav buttons */
 .nav-link {
   font-size: 10px;
   font-weight: 700;
@@ -155,12 +161,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-link:hover  { background: var(--white); border-color: var(--white); color: var(--black); }
 .nav-link.active { background: rgba(255,255,255,.15); border-color: rgba(255,255,255,.4); }
 
-/* Yellow variant — reuses .tag palette */
 .nav-link--secret       { border-color: var(--yellow-border); color: var(--yellow); background: var(--yellow-dim); }
 .nav-link--secret:hover { background: var(--yellow); border-color: var(--yellow); color: var(--black); }
 .nav-link--secret.active{ background: rgba(245,197,24,.15); }
 
-/* Hamburger (shown only on mobile via media query) */
+/* Hamburger */
 .nav-hamburger { display: none; flex-direction: column; gap: 6px; padding: 4px; }
 .nav-hamburger span {
   display: block; width: 22px; height: 2px;
@@ -172,7 +177,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* Full-screen mobile menu */
+/* Mobile full-screen menu */
 .mobile-overlay {
   display: none;
   position: fixed; inset: 0; z-index: 190;
@@ -203,16 +208,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .page--active { display: flex; }
 .page--enter  { animation: fadeUp .5s var(--ease) both; }
 
-/* Content well — use modifiers to change width or layout */
+/* Content well — modifiers change width or layout */
 .page-inner {
   width: 100%; max-width: 1200px;
   margin: 0 auto; padding: 72px 48px; flex: 1;
 }
-.page-inner--wide   { max-width: 1280px; }
+.page-inner--wide   { max-width: 1360px; }
 .page-inner--narrow { max-width: 720px; }
 .page-inner--split  { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start; }
 
-/* Section heading — same markup on every page */
+/* Section heading */
 .section-heading { margin-bottom: 56px; }
 .section-title {
   font-family: var(--font-display);
@@ -220,22 +225,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: .04em;
   line-height: 1;
 }
-/* Yellow rule that goes under any title or heading */
 .title-bar { width: 60px; height: 3px; background: var(--yellow); margin-top: 16px; }
 
 /* Body copy */
 .body-text { color: var(--white-dim); font-size: 15px; line-height: 1.85; margin-bottom: 20px; font-weight: 300; }
 
-/* Striped placeholder block — fill any container before images arrive */
+/* Striped placeholder */
 .img-ph {
   width: 100%; height: 100%;
   background: repeating-linear-gradient(
     -45deg, var(--black-card) 0, var(--black-card) 12px, #0d0d0d 12px, #0d0d0d 24px
   );
 }
-.img-ph--tall { min-height: 260px; }
+.img-ph--tall    { min-height: 260px; }
+.img-ph--portrait{ min-height: 320px; }
 
-/* ── Buttons — shared base, two visual variants ───────── */
+/* Buttons — shared base, two variants */
 .btn-yellow, .btn-outline {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-body);
@@ -254,6 +259,47 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
 
+/* Unified input — contact form + secret code field */
+.input {
+  width: 100%; padding: 15px 18px;
+  background: transparent;
+  border: 2px solid var(--white-faint);
+  color: var(--white); font-family: var(--font-body);
+  font-size: 15px; font-weight: 300; outline: none;
+  transition: border-color .25s, box-shadow .25s;
+  border-radius: 4px;
+}
+.input::placeholder { color: rgba(255,255,255,.25); }
+.input:focus        { border-color: var(--yellow); box-shadow: 0 0 0 1px var(--yellow); }
+.input--centered    { text-align: center; letter-spacing: .12em; font-weight: 400; padding: 16px 20px; }
+.input--area        { min-height: 140px; resize: vertical; }
+
+/* Form layout */
+.form     { display: flex; flex-direction: column; gap: 20px; }
+.form-row { display: flex; flex-direction: column; gap: 8px; }
+
+/* Horizontal link strip */
+.link-row {
+  display: flex; flex-wrap: wrap; gap: 28px;
+  padding-top: 28px; margin-top: 36px;
+  border-top: 1px solid var(--black-border);
+}
+.link-row a {
+  font-size: 12px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--yellow);
+  text-decoration: underline; text-underline-offset: 3px;
+  transition: opacity .2s;
+}
+.link-row a:hover { opacity: .75; }
+
+/* Status / alert banner */
+.notice {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; margin-bottom: 40px;
+  border: 1px solid var(--yellow-border);
+  background: var(--yellow-dim);
+}
+
 
 /* ═══════════════════════════════════════════════════════
    HOME HERO
@@ -267,7 +313,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,1) 120px, rgba(0,0,0,1) 100%);
 }
 
-/* Title block — sits at bottom-left of hero image, animates in on scroll */
 .home-title-reveal {
   position: absolute; bottom: 0; left: 0; width: 100%; z-index: 2;
   display: flex; align-items: flex-end; justify-content: flex-start;
@@ -284,7 +329,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: 0 24px 0 0;
 }
 
-/* Each child has its own staggered reveal */
 .home-title-eyebrow {
   font-size: 11px; font-weight: 700; letter-spacing: .28em; text-transform: uppercase;
   color: var(--yellow);
@@ -313,27 +357,42 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: opacity .8s 1s var(--ease), transform .8s 1s var(--ease), background .25s, color .25s;
 }
 
-/* All animated children fire when parent gets .is-visible */
+/* All staggered children resolve when parent gets .is-visible */
 .is-visible .home-title-eyebrow,
 .is-visible .home-big-title__line,
 .is-visible .home-title-bar,
 .is-visible .home-title-inner .btn-yellow { opacity: 1; transform: translateY(0); }
 
-/* Colour variants for title lines — combine with .home-big-title__line */
 .home-big-title__line--accent  { color: var(--yellow); }
 .home-big-title__line--outline { color: transparent; -webkit-text-stroke: 2px var(--white); }
 
-/* Full-bleed image + text overlay — reused for every home section */
+/* Full-bleed image + text overlay sections */
 .fullscreen-banner { position: relative; width: 100%; }
 .fullscreen-banner__img { width: 100%; height: auto; display: block; }
 .fullscreen-banner__overlay {
   position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: flex-start; padding: 2rem;
+  display: flex; align-items: flex-start; justify-content: flex-start;
+  padding: clamp(2.5rem, 4vw, 4.5rem) clamp(2rem, 4vw, 5rem) 2rem clamp(2rem, 4vw, 5rem);
 }
-.fullscreen-banner__content  { max-width: 900px; }
+.fullscreen-banner__content  { max-width: 900px; width: 100%; }
+.fullscreen-banner__content--right { text-align: right; }
+.fullscreen-banner__content--black { color: var(--black); }
 .fullscreen-banner__eyebrow  { letter-spacing: .2em; text-transform: uppercase; margin-bottom: 1rem; opacity: .8; }
-.fullscreen-banner__title    { font-size: clamp(3rem, 7vw, 7rem); line-height: .95; margin-bottom: 1rem; }
-.fullscreen-banner__text     { font-size: 1.2rem; max-width: 700px; opacity: .9; }
+.fullscreen-banner__title    { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 7rem); line-height: .95; margin-bottom: 1rem; }
+.fullscreen-banner__title--flipped {
+  display: block;
+  transform: rotate(180deg);
+  transform-origin: center;
+  text-align: right;
+}
+.fullscreen-banner__title--accent { color: var(--yellow); }
+.fullscreen-banner__text {
+  font-size: 1.1rem;
+  max-width: 70ch;
+  opacity: .85;
+  margin-bottom: 1.5rem;
+  padding-left: clamp(1rem, 2vw, 3rem);
+}
 
 
 /* ═══════════════════════════════════════════════════════
@@ -356,7 +415,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .paper-stack:hover .paper-stack__layers { transform: translateY(-8px); }
 
-/* Background sheets — modifier classes set the fan angle */
 .paper-sheet {
   position: absolute; inset: 0;
   border-radius: 18px;
@@ -390,124 +448,194 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 /* ═══════════════════════════════════════════════════════
-   ABOUT
+   ABOUT + CONTACT (merged page)
+   Layout: [sticky portrait col] | [scrollable content col]
 ═══════════════════════════════════════════════════════ */
-
-/* Portrait frame with offset yellow border.
-   Add .img-frame to the wrapper; put .img-frame__border inside it. */
-.img-frame { position: relative; overflow: hidden; }
-.img-frame__border {
-  position: absolute; inset: 0;
-  border: 2px solid var(--yellow); pointer-events: none;
-  transform: translate(12px, 12px);
-  transition: transform .4s var(--ease);
+.about-contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 0 72px;
+  align-items: start;
+  padding-top: 24px;    /* keep portrait close to the nav so it's immediately visible */
+  padding-bottom: 96px;
 }
-.img-frame:hover .img-frame__border { transform: translate(6px, 6px); }
-/* Size override applied alongside .img-frame on the About portrait */
-.about-img-wrap { aspect-ratio: 3/4; }
 
-/* Stat counter row — add to any flex container of .stat elements */
+/* Portrait column — sticks just below the nav */
+.portrait-col {
+  position: sticky;
+  top: calc(var(--nav-h) + 12px);
+  align-self: start;
+}
+
+/* Frame wrapper — height drives sizing so portrait never crops or overflows */
+.portrait-frame {
+  position: relative;
+  /* Exact portrait ratio: 1668 × 2388 */
+  aspect-ratio: 1668 / 2388;
+  /* Cap height to the visible area below the nav with a little breathing room */
+  height: calc(100vh - var(--nav-h) - 48px);
+  /* Width follows automatically from height × aspect-ratio */
+  width: auto;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--black-card);
+  border-radius: 20px;
+}
+
+/* Video and image stacked inside the frame */
+.portrait-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills exactly since ratio matches */
+  transition: opacity .8s var(--ease);
+}
+.portrait-media--video { opacity: 1; z-index: 2; }
+.portrait-media--img   { opacity: 0; z-index: 3; }
+
+/* Striped placeholder while video loads */
+.portrait-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 20px;
+}
+
+/* Reusable frame wrapper — rounded corners only, no border overlay */
+.img-frame { position: relative; overflow: hidden; border-radius: 20px; }
+/* Keep the border element in HTML but visually remove it */
+.img-frame__border { display: none; }
+
+/* Right column — normal document flow */
+.about-content-col { min-width: 0; }
+
+/* Thin rule between About and Contact sub-sections */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--black-border);
+  margin: 56px 0;
+}
+
+/* Stat counter row */
 .stats-row {
   display: flex; gap: 40px;
-  padding: 32px 0; margin: 40px 0;
+  padding: 28px 0; margin: 32px 0;
   border-top: 1px solid var(--black-border);
   border-bottom: 1px solid var(--black-border);
 }
 .stat { display: flex; flex-direction: column; gap: 4px; }
-.stat__num   { font-family: var(--font-display); font-size: 52px; letter-spacing: .04em; color: var(--yellow); line-height: 1; }
+.stat__num   { font-family: var(--font-display); font-size: 48px; letter-spacing: .04em; color: var(--yellow); line-height: 1; }
 .stat__label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--white-dim); }
 
-/* Key → Value detail list — reusable on About, project pages, etc. */
-.detail-list { display: flex; flex-direction: column; margin-bottom: 36px; }
+/* Key → Value detail list */
+.detail-list { display: flex; flex-direction: column; margin-bottom: 32px; }
 .detail-row {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 14px 0; border-bottom: 1px solid var(--black-border); font-size: 13px;
+  padding: 13px 0; border-bottom: 1px solid var(--black-border); font-size: 13px;
 }
 .detail-row__key { color: var(--white-dim); font-weight: 300; }
 .detail-row__val { color: var(--white); font-weight: 700; }
 
 
 /* ═══════════════════════════════════════════════════════
-   TOP SECRET
+   TOP SECRET — LOCK SCREEN
 ═══════════════════════════════════════════════════════ */
+
+/* The page uses a flex column so the two bands sit at
+   the very top and bottom, the lock fills the space between. */
 .page--secret {
-  position: relative; justify-content: center; align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--nav-h);
+  height: 100vh;       /* exactly one viewport — no scrolling ever */
+  min-height: unset;   /* override the .page default */
+  overflow: hidden;    /* bands cannot push content outside */
   background:
     repeating-linear-gradient(0deg,  transparent, transparent 39px, rgba(255,255,255,.04) 39px, rgba(255,255,255,.04) 40px),
     repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.04) 39px, rgba(255,255,255,.04) 40px),
     var(--black);
 }
 
-/* Caution tape stripe — position with .tape--top / .tape--bottom */
+/* ── Animated CAUTION tape bands ─────────────────────── */
 .tape {
-  position: absolute; left: 0; right: 0; z-index: 10;
-  padding: 10px 0;
-  background: var(--yellow); color: var(--black);
-  font-size: 11px; font-weight: 700; letter-spacing: .15em;
-  white-space: nowrap; overflow: hidden;
+  width: 100%;
+  height: var(--tape-h);
+  overflow: hidden;
+  flex-shrink: 0;           /* never squish — always full height */
+  background: var(--yellow);
+  display: flex;
+  align-items: center;
 }
-.tape--top    { top: var(--nav-h); }
-.tape--bottom { bottom: 0; }
 
-.secret-lock {
-  display: flex; flex-direction: column; align-items: center;
-  gap: 20px; text-align: center; padding: 0 24px; max-width: 480px;
+.tape__track {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--black);
+  /* animate: move left by exactly half (two identical copies → seamless loop) */
+  animation: ticker 28s linear infinite;
+  will-change: transform;
 }
+
+/* Bottom band scrolls in the opposite direction */
+.tape--bottom .tape__track {
+  animation-direction: reverse;
+}
+
+/* ── Lock UI — expands to fill space between the two bands ── */
+.secret-lock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  padding: 48px 24px;    /* breathing room away from bands */
+  width: 100%;
+}
+
 .secret-title {
   font-family: var(--font-display);
   font-size: clamp(52px, 10vw, 96px);
   letter-spacing: .12em; color: var(--yellow);
   text-shadow: 0 0 40px rgba(245,197,24,.2);
 }
+
+/* Subtitle below the title */
+.secret-sub {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  max-width: 320px;
+}
+
 .secret-form {
   display: flex; flex-direction: column; align-items: center;
-  gap: 16px; width: 100%; margin-top: 8px;
+  gap: 16px; width: 100%; max-width: 400px; margin-top: 8px;
 }
-.secret-input-wrap { width: 100%; max-width: 360px; }
+.secret-input-wrap { width: 100%; }
 
-/* Status/alert banner — combine .u-accent on children for the yellow palette */
-.notice {
-  display: flex; align-items: center; gap: 12px;
-  padding: 14px 20px; margin-bottom: 40px;
-  border: 1px solid var(--yellow-border);
-  background: var(--yellow-dim);
+/* Error message (hidden by default, shown by JS) */
+.secret-error {
+  display: none;
+  font-size: 11px; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; color: #ff4444;
 }
 
-/* ── Unified input field ─────────────────────────────── */
-/* Covers both contact form and secret access code field */
-.input {
-  width: 100%; padding: 15px 18px;
-  background: var(--black-card); border: 1px solid var(--black-border);
-  color: var(--white); font-family: var(--font-body);
-  font-size: 14px; font-weight: 300; outline: none;
-  transition: border-color .25s, box-shadow .25s;
+/* Secret inner content grid */
+.secret-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 40px 0;
 }
-.input::placeholder { color: rgba(255,255,255,.18); }
-.input:focus        { border-color: var(--yellow); box-shadow: 0 0 0 1px var(--yellow); }
-/* Centre text + larger padding for the secret code entry */
-.input--centered    { text-align: center; letter-spacing: .12em; font-weight: 400; padding: 16px 20px; }
-/* Multi-line textarea */
-.input--area        { min-height: 140px; resize: vertical; }
-
-
-/* ═══════════════════════════════════════════════════════
-   CONTACT FORM
-═══════════════════════════════════════════════════════ */
-.form     { display: flex; flex-direction: column; gap: 24px; }
-.form-row { display: flex; flex-direction: column; gap: 8px; }
-
-/* Horizontal link strip — contact socials, footer links, project CTAs.
-   Any <a> inside gets the label treatment automatically. */
-.link-row {
-  display: flex; flex-wrap: wrap; gap: 32px;
-  padding-top: 32px; margin-top: 48px;
-  border-top: 1px solid var(--black-border);
-}
-.link-row a {
-  font-size: 12px; font-weight: 700; letter-spacing: .15em;
-  text-transform: uppercase; color: var(--white-dim); transition: color .25s;
-}
-.link-row a:hover { color: var(--yellow); }
+.secret-item { display: flex; flex-direction: column; gap: 10px; }
 
 
 /* ═══════════════════════════════════════════════════════
@@ -528,17 +656,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .breadcrumb__sep        { color: rgba(255,255,255,.2); }
 .breadcrumb__current    { color: var(--white); }
 
-/* Row of .tag elements above the project title */
+/* Row of .tag elements above the title */
 .tag-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
 
-/* Project large title — a bigger scale of .section-title */
+/* Project large title */
 .project-title {
   font-family: var(--font-display);
   font-size: clamp(48px, 8vw, 112px);
   letter-spacing: .02em; line-height: 1; margin-bottom: 20px;
 }
 
-/* Pinterest-style masonry — CSS columns for natural image heights */
+/* Pinterest-style masonry */
 .masonry-grid { columns: 3; column-gap: 12px; width: 100%; }
 .masonry-item {
   break-inside: avoid; margin-bottom: 12px;
@@ -548,7 +676,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .masonry-item img { display: block; width: 100%; height: auto; transition: transform .55s var(--ease); }
 .masonry-item:hover img { transform: scale(1.04); }
 
-/* Graceful placeholder when an image path is missing */
+/* Placeholder when image path is missing */
 .masonry-item--ph { cursor: default; }
 .masonry-item--ph img { display: none; }
 .masonry-item--ph::before {
@@ -563,7 +691,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: rgba(255,255,255,.15);
 }
 
-/* Project page footer CTA */
+/* Project page CTA footer */
 .project-cta { margin-top: 80px; padding-top: 48px; border-top: 1px solid var(--black-border); }
 .project-cta__btns { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
 
@@ -587,6 +715,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: scale(.96); transition: transform .35s var(--ease);
 }
 .lightbox.is-open .lightbox__img { transform: scale(1); }
+.lightbox__stage { display: flex; align-items: center; justify-content: center; }
 .lightbox__close {
   position: absolute; top: 24px; right: 28px;
   font-size: 32px; line-height: 1; font-family: sans-serif;
@@ -600,41 +729,376 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    FOOTER
 ═══════════════════════════════════════════════════════ */
 .site-footer {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
-  padding: 24px 48px;
+  padding: 28px 48px;
+  text-align: center;
   border-top: 1px solid var(--black-border);
+  color: var(--white-dim);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: .05em;
 }
-/* Footer title reuses the .nav-title visual */
-.footer-name { font-family: var(--font-display); font-size: 20px; letter-spacing: .08em; color: var(--yellow); }
-/* Footer links reuse .link-row a styles, hoisted into their own row */
-.footer-links { display: flex; gap: 28px; }
-.footer-link  { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--white-dim); cursor: pointer; transition: color .25s; }
-.footer-link:hover { color: var(--yellow); }
 
 
 /* ═══════════════════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .about-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 56px 0;
+    padding-top: 32px;
+  }
+  .portrait-col {
+    position: static;
+    /* FIX 2: centre the portrait in the single-column layout */
+    display: flex;
+    justify-content: center;
+  }
+  .portrait-frame {
+    height: auto;
+    width: 100%;
+    max-width: 360px;      /* cap width so it doesn't stretch full-screen */
+    aspect-ratio: 1668 / 2388;
+  }
+}
+
 @media (max-width: 960px) {
-  .page-inner--split { grid-template-columns: 1fr; gap: 56px; }
-  .about-img-wrap    { aspect-ratio: 4/3; }
-  .masonry-grid      { columns: 2; }
+  .masonry-grid { columns: 2; }
 }
 
 @media (max-width: 720px) {
-  :root          { --nav-h: 60px; }
+  :root { --nav-h: 60px; }
+
+  /* FIX 1: hamburger pinned to right edge of the nav bar */
   .nav-header    { padding: 0 20px; }
+  .nav-spacer    { display: none; }               /* remove middle dead space */
+  .nav-left      { flex: 1; justify-content: space-between; }
+  .nav-hamburger { display: flex; margin-left: auto; }
   .nav-menu      { display: none; }
-  .nav-hamburger { display: flex; }
   .mobile-overlay{ display: flex; }
+
   .page-inner    { padding: 48px 24px; }
-  .stats-row     { gap: 24px; }
+  .stats-row     { gap: 20px; }
   .stat__num     { font-size: 40px; }
-  .link-row      { flex-direction: column; gap: 16px; }
-  .site-footer   { flex-direction: column; align-items: flex-start; padding: 24px; gap: 12px; }
+  .link-row      { flex-direction: column; gap: 12px; }
+  .project-cta__btns { flex-direction: column; }
+  .site-footer   { padding: 24px; }
+
+  .secret-grid   { grid-template-columns: 1fr; }
+
+  .fullscreen-banner__text { font-size: 0.70rem; }
+
+  .achievement-toast {
+    bottom: 16px; right: 16px;
+    width: calc(100vw - 32px);
+  }
 }
 
 @media (max-width: 520px) {
   .masonry-grid { columns: 1; }
   .page-inner   { padding: 32px 20px 64px; }
+
+  /* FIX 3 supplement: very small screens — tighten banner overlay padding further */
+  .fullscreen-banner__overlay { padding: 1rem 1rem 1rem; }
+  .fullscreen-banner__text    { font-size: .7rem; }
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   ACHIEVEMENT TOAST
+   Slides up from the bottom-right corner like a game
+   achievement notification. Auto-dismisses after 6 s.
+═══════════════════════════════════════════════════════ */
+.achievement-toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 20px 18px 20px;
+  max-width: 340px;
+  width: calc(100vw - 48px);
+
+  background: var(--black-card);
+  border: 1px solid var(--yellow-border);
+  border-left: 4px solid var(--yellow);
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(0,0,0,.6), 0 0 0 1px rgba(245,197,24,.08);
+
+  /* Start off-screen below the viewport */
+  transform: translateY(calc(100% + 48px));
+  opacity: 0;
+  transition: transform .55s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity   .4s ease;
+
+  pointer-events: none;
+}
+
+/* Slide into view */
+.achievement-toast.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.achievement-toast__icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(245,197,24,.5));
+}
+
+.achievement-toast__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.achievement-toast__eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.achievement-toast__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .04em;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.achievement-toast__sub {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--white-dim);
+  line-height: 1.5;
+}
+
+.achievement-toast__close {
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-size: 14px;
+  color: var(--white-dim);
+  cursor: pointer;
+  transition: color .2s;
+  padding: 2px 4px;
+}
+.achievement-toast__close:hover { color: var(--white); }
+
+
+/* ═══════════════════════════════════════════════════════
+   EASTER EGG BOX
+═══════════════════════════════════════════════════════ */
+.easter-egg-container {
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--black-border);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* The box itself — looks decorative, not like a button */
+.easter-box {
+  position: relative;
+  width: 80px;
+  height: 64px;
+  background: #2a1f10;
+  border-radius: 6px;
+  cursor: default;       /* no pointer — hides interactive intent */
+  user-select: none;
+  outline: none;
+  /* Subtle cardboard texture via gradient */
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0, transparent 8px,
+      rgba(255,255,255,.015) 8px, rgba(255,255,255,.015) 9px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0, transparent 6px,
+      rgba(0,0,0,.08) 6px, rgba(0,0,0,.08) 7px
+    );
+  background-color: #2a1f10;
+  /* Tape strip across the top */
+  border-top: 3px solid #c8a96b;
+  box-shadow: inset 0 -3px 8px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.4);
+}
+
+/* Box flap line */
+.easter-box::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 1px;
+  background: rgba(200,169,107,.25);
+}
+
+/* Center crease */
+.easter-box::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(200,169,107,.2);
+}
+
+/* Shake animation on first click and subsequent */
+@keyframes boxShake {
+  0%,100% { transform: translateX(0) rotate(0deg); }
+  15%      { transform: translateX(-5px) rotate(-1.5deg); }
+  30%      { transform: translateX(5px)  rotate(1.5deg); }
+  45%      { transform: translateX(-4px) rotate(-1deg); }
+  60%      { transform: translateX(4px)  rotate(1deg); }
+  75%      { transform: translateX(-2px) rotate(-.5deg); }
+  90%      { transform: translateX(2px)  rotate(.5deg); }
+}
+.easter-box.is-shaking { animation: boxShake .45s var(--ease); }
+
+/* Break animation */
+@keyframes boxBreak {
+  0%   { transform: scale(1)    rotate(0deg);   opacity: 1; }
+  20%  { transform: scale(1.08) rotate(-3deg);  opacity: 1; }
+  40%  { transform: scale(1.12) rotate(3deg);   opacity: .9; }
+  60%  { transform: scale(.95)  rotate(-2deg);  opacity: .6; }
+  80%  { transform: scale(1.2)  rotate(5deg);   opacity: .3; }
+  100% { transform: scale(0)    rotate(20deg);  opacity: 0; }
+}
+.easter-box.is-breaking { animation: boxBreak .6s var(--ease) forwards; }
+
+/* SVG crack overlay */
+.easter-box__cracks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Individual crack lines — hidden by default */
+.crack { opacity: 0; transition: opacity .2s; }
+
+/* Show cracks progressively based on data attribute */
+.easter-box[data-cracks="1"] .crack-1 { opacity: 1; }
+.easter-box[data-cracks="2"] .crack-1,
+.easter-box[data-cracks="2"] .crack-2 { opacity: 1; }
+.easter-box[data-cracks="3"] .crack-1,
+.easter-box[data-cracks="3"] .crack-2,
+.easter-box[data-cracks="3"] .crack-3 { opacity: 1; }
+.easter-box[data-cracks="4"] .crack-1,
+.easter-box[data-cracks="4"] .crack-2,
+.easter-box[data-cracks="4"] .crack-3,
+.easter-box[data-cracks="4"] .crack-4 { opacity: 1; }
+.easter-box[data-cracks="5"] .crack-1,
+.easter-box[data-cracks="5"] .crack-2,
+.easter-box[data-cracks="5"] .crack-3,
+.easter-box[data-cracks="5"] .crack-4,
+.easter-box[data-cracks="5"] .crack-5 { opacity: 1; }
+
+/* Revealed button after breaking */
+.easter-reveal {
+  display: none;
+  animation: fadeUp .5s var(--ease) both;
+}
+.easter-reveal.is-visible { display: block; }
+
+
+/* ═══════════════════════════════════════════════════════
+   ACHIEVEMENTS PAGE
+═══════════════════════════════════════════════════════ */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.achievement-card {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 12px;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  transition: border-color .25s;
+}
+.achievement-card--unlocked { border-color: var(--yellow-border); }
+.achievement-card--unlocked:hover { border-color: var(--yellow); }
+
+.achievement-card__icon {
+  font-size: 40px;
+  line-height: 1;
+  filter: grayscale(1);
+  opacity: .25;
+}
+.achievement-card--unlocked .achievement-card__icon {
+  filter: none;
+  opacity: 1;
+  filter: drop-shadow(0 0 10px rgba(245,197,24,.35));
+}
+
+.achievement-card__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: .04em;
+  color: var(--white-dim);
+}
+.achievement-card--unlocked .achievement-card__title { color: var(--white); }
+
+.achievement-card__desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,.3);
+  line-height: 1.6;
+}
+.achievement-card--unlocked .achievement-card__desc { color: var(--white-dim); }
+
+/* The ? placeholder shown for locked achievements */
+.achievement-card__locked-icon {
+  font-size: 40px;
+  color: rgba(255,255,255,.1);
+  font-family: var(--font-display);
+  letter-spacing: 0;
+}
+
+.achievement-card__hint {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.2);
+  font-style: italic;
+}
+.achievement-card--unlocked .achievement-card__hint { display: none; }
+
+/* Reset button area */
+.achievements-reset {
+  margin-top: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--black-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.achievements-reset__warning {
+  font-size: 11px;
+  color: rgba(255,255,255,.3);
+  font-weight: 300;
 }

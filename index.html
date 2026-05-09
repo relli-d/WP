@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Art of Davide Morelli</title>
+  <link rel="icon" type="image/png" href="images/site_icon.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,56 +13,42 @@
 <body>
 
   <!-- ══════════════════════════════════════
-       NAVIGATION — 3-column layout
-       [empty] | Site Title | Nav Links
+       NAVIGATION
   ══════════════════════════════════════ -->
   <header class="nav-header nav-header--hidden" id="nav">
     <div class="nav-left">
-        <!-- HOME TITLE BUTTON -->
-        <a class="nav-title" data-page="home">
-          The Art of Davide Morelli
-        </a>
-
-        <!-- HAMBURGER -->
-        <button class="nav-hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+      <a class="nav-title" href="#home" data-page="home">The Art of Davide Morelli</a>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="nav-title-placeholder"></div>
+    <div class="nav-spacer"></div>
     <nav class="nav-menu">
-      <a class="nav-link" data-page="portfolio">Portfolio</a>
-      <a class="nav-link nav-link--secret" data-page="topsecret">TOP SECRET</a>
-      <a class="nav-link" data-page="about">About</a>
-      <a class="nav-link" data-page="contact">Contact</a>
+      <a class="nav-link" href="#portfolio" data-page="portfolio">Portfolio</a>
+      <a class="nav-link" href="#about" data-page="about">About</a>
+      <a class="nav-link nav-link--secret" href="#topsecret" data-page="topsecret">TOP SECRET</a>
     </nav>
   </header>
 
   <!-- Mobile overlay -->
   <div class="mobile-overlay">
     <nav class="mobile-nav">
-      <a class="mobile-link" data-page="home">Home</a>
-      <a class="mobile-link" data-page="portfolio">Portfolio</a>
-      <a class="mobile-link" data-page="about">About</a>
-      <a class="mobile-link mobile-link--secret" data-page="topsecret">TOP SECRET</a>
-      <a class="mobile-link" data-page="contact">Contact</a>
+      <a class="mobile-link" href="#home" data-page="home">Home</a>
+      <a class="mobile-link" href="#portfolio" data-page="portfolio">Portfolio</a>
+      <a class="mobile-link" href="#about" data-page="about">About</a>
+      <a class="mobile-link mobile-link--secret" href="#topsecret" data-page="topsecret">TOP SECRET</a>
     </nav>
   </div>
 
 
   <!-- ══════════════════════════════════════
-       PAGE: HOME — Full-scroll hero
+       PAGE: HOME
   ══════════════════════════════════════ -->
   <section id="home" class="page page--active page--home">
 
-    <!-- HERO First Image of the page -->
     <div class="scroll-hero">
-      <img
-        src="images/Landing.JPG"
-        alt="The Art of Davide Morelli"
-        class="scroll-hero__img"
-        draggable="false"
-      />
-      <!-- Title overlay at bottom left of image -->
+      <img src="images/Landing.JPG" alt="The Art of Davide Morelli" class="scroll-hero__img" draggable="false"/>
+
       <div class="home-title-reveal" id="titleReveal">
         <div class="home-title-inner">
           <p class="home-title-eyebrow">Visual Artist · Milan</p>
@@ -71,207 +58,223 @@
             <span class="home-big-title__line home-big-title__line--accent">Morelli</span>
           </h1>
           <div class="home-title-bar"></div>
-          <a class="btn-yellow" data-page="portfolio">Explore Portfolio →</a>
+          <a class="btn-yellow" href="#portfolio" data-page="portfolio">Explore Portfolio →</a>
         </div>
       </div>
     </div>
-  
-    <!-- SECTION 2 -->
-    <section class="fullscreen-banner">
-      <img
-        src="images/SecondBanner.JPG"
-        alt="Creative Process"
-        class="fullscreen-banner__img"
-      />
 
+    <section class="fullscreen-banner">
+      <img src="images/Pistol.JPG" alt="Creative Process" class="fullscreen-banner__img"/>
       <div class="fullscreen-banner__overlay">
         <div class="fullscreen-banner__content">
-          <p class="fullscreen-banner__eyebrow">
-            Contemporary Expression
-          </p>
-
-          <h2 class="fullscreen-banner__title">
-            Art Beyond the Canvas
-          </h2>
-
-          <p class="fullscreen-banner__text">
-            A visual exploration of emotion, texture, and atmosphere.
-          </p>
-
-          <a href="#" class="btn-yellow">
-            Discover More →
-          </a>
+          <p class="fullscreen-banner__eyebrow">Why a website?</p>
+          <h2 class="fullscreen-banner__title">All the Art<br />in One Place</h2>
+          <p class="fullscreen-banner__text">They say <br /><b>"Dress for the job you want"</b><br />So I looked at how the heavy hitters
+          were doing their websites and I took  a bit of inspiration.<br />
+          Here I can showcase my works, explain the creative process, collect portfolios and 
+          most importantly, have a little FUN!</p>
+          <a class="btn-yellow" href="#about" data-page="about">Get to know me →</a>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3
     <section class="fullscreen-banner">
-      <img
-        src="images/banner-3.jpg"
-        alt="Gallery"
-        class="fullscreen-banner__img"
-      />
-
+      <img src="images/Basket.JPG" alt="Creative Process" class="fullscreen-banner__img"/>
       <div class="fullscreen-banner__overlay">
-        <div class="fullscreen-banner__content">
-          <p class="fullscreen-banner__eyebrow">
-            New Collection
-          </p>
-
-          <h2 class="fullscreen-banner__title">
-            Shapes of Silence
-          </h2>
-
-          <p class="fullscreen-banner__text">
-            Minimal forms and cinematic light studies.
+        <div class="fullscreen-banner__content fullscreen-banner__content--black">
+          <h2 class="fullscreen-banner__title">Take a look <br />around!</h2>
+          <p class="fullscreen-banner__text">See something that you like? <br />
+            You've had an idea in the back of your head for a while now <br />
+            and was searching for someone that could turn it into reality?<br />
+            Drop me a message. Maybe I'm the <b>right person</b> for the job.
           </p>
         </div>
       </div>
-    </section> -->
+    </section>
+
   </section>
-<!-- ══════════════════════════════════════
-     PAGE: PORTFOLIO
-══════════════════════════════════════ -->
-<section id="portfolio" class="page">
-
-  <div class="page-inner">
-
-    <div class="section-heading">
-      <h2 class="section-title">Portfolio</h2>
-      <div class="title-bar"></div>
-    </div>
-
-    <!-- PAPER STACK GRID -->
-    <div class="paper-stack-grid">
-
-      <!-- STACK 1 -->
-      <a class="paper-stack" data-page="project-comics">
-
-        <div class="paper-stack__layers">
-
-          <div class="paper-sheet paper-sheet--3"></div>
-          <div class="paper-sheet paper-sheet--2"></div>
-          <div class="paper-sheet paper-sheet--1"></div>
-
-          <!-- TOP COVER -->
-          <div class="paper-cover">
-            <img
-              src="images/portfolios/LFS_Cover.JPG"
-              alt="Comics Project"
-              class="paper-cover__img"
-            />
-          </div>
-
-        </div>
-
-        <div class="paper-stack__meta">
-          <h3 class="paper-stack__title">Lu Free Spirit</h3>
-          <p class="paper-stack__subtitle">
-            Comics series
-          </p>
-        </div>
-
-      </a>
-
-      <!-- STACK 2 -->
-      <a class="paper-stack" data-page="project-illustration">
-
-        <div class="paper-stack__layers">
-
-          <div class="paper-sheet paper-sheet--3"></div>
-          <div class="paper-sheet paper-sheet--2"></div>
-          <div class="paper-sheet paper-sheet--1"></div>
-
-          <div class="paper-cover">
-            <img
-              src="images/portfolios/Caricature_Cover.JPG"
-              alt="Illustration"
-              class="paper-cover__img"
-            />
-          </div>
-
-        </div>
-
-        <div class="paper-stack__meta">
-          <h3 class="paper-stack__title">Caricatures</h3>
-          <p class="paper-stack__subtitle">
-            Commissioned portraits for graduation parties
-          </p>
-        </div>
-
-      </a>
-
-      <!-- STACK 3
-      <a class="paper-stack" data-page="project-digital">
-
-        <div class="paper-stack__layers">
-
-          <div class="paper-sheet paper-sheet--3"></div>
-          <div class="paper-sheet paper-sheet--2"></div>
-          <div class="paper-sheet paper-sheet--1"></div>
-
-          <div class="paper-cover">
-            <img
-              src="images/project3.jpg"
-              alt="Digital Art"
-              class="paper-cover__img"
-            />
-          </div>
-
-        </div>
-
-        <div class="paper-stack__meta">
-          <h3 class="paper-stack__title">Digital</h3>
-          <p class="paper-stack__subtitle">
-            Experiments in light and texture
-          </p>
-        </div>
-
-      </a> -->
-
-    </div>
-
-  </div>
-
-</section>
 
 
   <!-- ══════════════════════════════════════
-       PAGE: ABOUT
+       PAGE: PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section id="portfolio" class="page">
+    <div class="page-inner">
+
+      <div class="section-heading">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="paper-stack-grid">
+
+        <a class="paper-stack" href="#project-comics" data-page="project-comics">
+          <div class="paper-stack__layers">
+            <div class="paper-sheet paper-sheet--3"></div>
+            <div class="paper-sheet paper-sheet--2"></div>
+            <div class="paper-sheet paper-sheet--1"></div>
+            <div class="paper-cover">
+              <img src="images/portfolios/LFS_Cover.JPG" alt="Comics Project" class="paper-cover__img"/>
+            </div>
+          </div>
+          <div class="paper-stack__meta">
+            <h3 class="paper-stack__title">Lu Free Spirit</h3>
+            <p class="paper-stack__subtitle">Comics series</p>
+          </div>
+        </a>
+
+        <a class="paper-stack" href="#project-illustration" data-page="project-illustration">
+          <div class="paper-stack__layers">
+            <div class="paper-sheet paper-sheet--3"></div>
+            <div class="paper-sheet paper-sheet--2"></div>
+            <div class="paper-sheet paper-sheet--1"></div>
+            <div class="paper-cover">
+              <img src="images/portfolios/Caricature_Cover.JPG" alt="Illustration" class="paper-cover__img"/>
+            </div>
+          </div>
+          <div class="paper-stack__meta">
+            <h3 class="paper-stack__title">Caricatures</h3>
+            <p class="paper-stack__subtitle">Commissioned portraits for graduation parties</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE: ABOUT + CONTACT (merged)
   ══════════════════════════════════════ -->
   <section id="about" class="page">
-    <div class="page-inner page-inner--split">
-      <div class="about-img-col">
-        <div class="about-img-wrap">
-          <div class="img-ph"></div>
-          <div class="about-img-border"></div>
+    <div class="about-contact-grid page-inner page-inner--wide">
+
+      <!-- LEFT: Portrait frame (sticky) -->
+      <div class="portrait-col">
+        <div class="portrait-frame img-frame" id="portraitFrame">
+          <video id="portraitVideo" class="portrait-media portrait-media--video" muted playsinline preload="auto"></video>
+          <img  id="portraitImg"   class="portrait-media portrait-media--img" src="" alt="Portrait"/>
+          <div class="portrait-placeholder img-ph" id="portraitPlaceholder"></div>
+          <div class="img-frame__border"></div>
         </div>
       </div>
-      <div class="about-text-col">
+
+      <!-- RIGHT: scrollable content -->
+      <div class="about-content-col">
+
         <div class="section-heading">
           <h2 class="section-title">About</h2>
           <div class="title-bar"></div>
         </div>
-        <p class="body-text">
-          Anyone can draw, 
+
+        <p class="body-text">A brilliant academic background, years in the industry,
+          a long list of prestigious clients, countless exhibitions and awards. This
+          is everything I'm not. But a pen a piece of paper and a fiery passion for drawing
+          is more than enough to get the job done, right? <br />...right?
         </p>
-        <p class="body-text">
-          A second paragraph about your influences, exhibitions,
-          residencies, awards, or anything else that defines your journey.
-        </p>
-        <div class="about-stats">
+
+<!--
+        <div class="stats-row">
           <div class="stat"><span class="stat__num">10+</span><span class="stat__label">Years</span></div>
           <div class="stat"><span class="stat__num">50+</span><span class="stat__label">Works</span></div>
           <div class="stat"><span class="stat__num">12</span><span class="stat__label">Exhibitions</span></div>
         </div>
-        <div class="about-details">
-          <div class="about-row"><span class="about-row__k">Based in</span><span class="about-row__v">Milan, Italy</span></div>
-          <div class="about-row"><span class="about-row__k">Medium</span><span class="about-row__v">Comics · Illustration</span></div>
-          <div class="about-row"><span class="about-row__k">Instagram</span><span class="about-row__v">@lufreespirit</span></div>
+-->
+        <div class="detail-list">
+          <div class="detail-row"><span class="detail-row__key">Based in</span><span class="detail-row__val">Milan, Italy</span></div>
+          <div class="detail-row"><span class="detail-row__key">Medium</span><span class="detail-row__val">Comics · Illustration</span></div>
         </div>
-        <a href="#" class="btn-outline">Download CV ↗</a>
+
+        <a href="https://www.linkedin.com/in/d-relli" class="btn-outline" target="_blank" rel="noreferrer noopener">LinkedIn ↗</a>
+
+        <hr class="section-divider" />
+
+        <div class="section-heading" style="margin-top:0">
+          <h2 class="section-title">Contact</h2>
+          <div class="title-bar"></div>
+        </div>
+
+        <p class="body-text">For commissions, exhibitions, collaborations, and press inquiries.</p>
+
+        <form class="form" novalidate>
+          <div class="form-row">
+            <label class="label" for="fname">Name</label>
+            <input class="input" type="text" id="fname" placeholder="Your name"/>
+          </div>
+          <div class="form-row">
+            <label class="label" for="femail">Email</label>
+            <input class="input" type="email" id="femail" placeholder="your@email.com"/>
+          </div>
+          <div class="form-row">
+            <label class="label" for="fmsg">Message</label>
+            <textarea class="input input--area" id="fmsg" placeholder="Tell me about your project…"></textarea>
+          </div>
+          <button type="submit" class="btn-yellow">Send Message →</button>
+        </form>
+
+        <div class="link-row">
+          <a href="mailto:davide@email.com">relli.prof@gmail.com</a>
+          <a href="https://instagram.com/lufreespirit" target="_blank">@lufreespirit ↗</a>
+          <a href="https://instagram.com/reeallii" target="_blank">@reeallii ↗</a>
+        </div>
+
+        <!-- ── Easter egg box ─────────────────────────────
+             Looks like a plain decorative element.
+             7 clicks to break it and earn the achievement.
+        ────────────────────────────────────────────────── -->
+        <div class="easter-egg-container" id="easterEggContainer">
+
+          <div class="easter-box" id="easterBox" data-cracks="0" tabindex="0" aria-label="A dusty box">
+            <svg class="easter-box__cracks" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline class="crack crack-1" points="12,4 8,18 16,22 10,34"             stroke="#c8a000" stroke-width="1"   stroke-linejoin="round"/>
+              <polyline class="crack crack-2" points="66,10 70,24 62,30 68,44"           stroke="#c8a000" stroke-width="1"   stroke-linejoin="round"/>
+              <polyline class="crack crack-3" points="38,48 34,56 42,60 36,64"           stroke="#c8a000" stroke-width="1"   stroke-linejoin="round"/>
+              <polyline class="crack crack-4" points="55,2 48,16 56,20 44,36 52,40"      stroke="#c8a000" stroke-width="1"   stroke-linejoin="round"/>
+              <g class="crack crack-5">
+                <polyline points="40,32 32,22 26,28" stroke="#c8a000" stroke-width=".8" stroke-linejoin="round"/>
+                <polyline points="40,32 50,20 58,26" stroke="#c8a000" stroke-width=".8" stroke-linejoin="round"/>
+                <polyline points="40,32 36,44 28,42" stroke="#c8a000" stroke-width=".8" stroke-linejoin="round"/>
+                <polyline points="40,32 46,46 54,42" stroke="#c8a000" stroke-width=".8" stroke-linejoin="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Hidden until box breaks -->
+          <div class="easter-reveal" id="easterReveal">
+            <a class="btn-yellow" href="#achievements" data-page="achievements">View Achievements →</a>
+          </div>
+
+        </div>
+
+      </div><!-- /about-content-col -->
+    </div><!-- /about-contact-grid -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PAGE: ACHIEVEMENTS
+  ══════════════════════════════════════ -->
+  <section id="achievements" class="page">
+    <div class="page-inner page-inner--narrow">
+
+      <div class="section-heading">
+        <h2 class="section-title">Achievements</h2>
+        <div class="title-bar"></div>
       </div>
+
+      <p class="body-text">Why would anyone want to collect achievements on a webpage?
+        Maybe you have a little bit too much free time on your hands, have you considered
+        like... getting a hobby or something?
+      </p>
+
+      <!-- Populated dynamically by JS -->
+      <div class="achievements-grid" id="achievementsGrid"></div>
+
+      <div class="achievements-reset">
+        <p class="achievements-reset__warning">Resetting will erase all progress — you can earn everything again from scratch.</p>
+        <button class="btn-outline" id="resetAchievementsBtn">Reset All Achievements</button>
+      </div>
+
     </div>
   </section>
 
@@ -280,10 +283,16 @@
        PAGE: TOP SECRET — LOCK SCREEN
   ══════════════════════════════════════ -->
   <section id="topsecret" class="page page--secret">
-    <div class="secret-tape secret-tape--top" aria-hidden="true">CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp;</div>
+
+    <div class="tape tape--top" aria-hidden="true">
+      <div class="tape__track">
+        CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp;&nbsp;
+        CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp;&nbsp;
+      </div>
+    </div>
 
     <div class="secret-lock">
-      <div class="secret-badge">
+      <div class="glow-badge">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
           <rect x="1.5" y="1.5" width="77" height="77" rx="38.5" stroke="#F5C518" stroke-width="3"/>
           <path d="M27 37V29C27 21.268 33.268 15 41 15C48.732 15 55 21.268 55 29V37" stroke="#F5C518" stroke-width="3" stroke-linecap="round"/>
@@ -296,14 +305,20 @@
       <p class="secret-sub">Clearance required. Enter access code to proceed.</p>
       <div class="secret-form">
         <div class="secret-input-wrap">
-          <input id="passwordInput" class="secret-input" type="password" placeholder="Enter access code" autocomplete="off"/>
+          <input id="passwordInput" class="input input--centered" type="password" placeholder="Enter access code" autocomplete="off"/>
         </div>
         <button class="btn-yellow" id="unlockBtn">Unlock →</button>
         <p class="secret-error" id="secretError">⚠&nbsp; ACCESS DENIED. Wrong code.</p>
       </div>
     </div>
 
-    <div class="secret-tape secret-tape--bottom" aria-hidden="true">CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp; CONFIDENTIAL &nbsp;·&nbsp;</div>
+    <div class="tape tape--bottom" aria-hidden="true">
+      <div class="tape__track">
+        CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp;&nbsp;
+        CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp; CAUTION &nbsp;·&nbsp;&nbsp;
+      </div>
+    </div>
+
   </section>
 
 
@@ -312,141 +327,83 @@
   ══════════════════════════════════════ -->
   <section id="secretContent" class="page">
     <div class="page-inner page-inner--narrow">
-      <div class="secret-unlocked-row">
-        <svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#F5C518" stroke-width="2"/><path d="M12 20l6 6 10-12" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="secret-unlocked-label">Access Granted</span>
+
+      <div class="notice">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+          <circle cx="20" cy="20" r="19" stroke="#F5C518" stroke-width="2"/>
+          <path d="M12 20l6 6 10-12" stroke="#F5C518" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="label u-accent">Access Granted</span>
       </div>
+
       <div class="section-heading">
         <h2 class="section-title">Classified</h2>
         <div class="title-bar"></div>
       </div>
+
       <p class="body-text">Welcome to the inner circle. This page is for your eyes only.</p>
+
       <div class="secret-grid">
-        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Work In Progress · 2024</p></div>
-        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Unreleased Study · 2024</p></div>
-        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="secret-item__label">Client Preview · 2024</p></div>
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="label" style="margin-top:10px;">Work In Progress · 2024</p></div>
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="label" style="margin-top:10px;">Unreleased Study · 2024</p></div>
+        <div class="secret-item"><div class="img-ph img-ph--tall"></div><p class="label" style="margin-top:10px;">Client Preview · 2024</p></div>
       </div>
-      <button class="btn-outline" id="lockAgainBtn">🔒 Lock Again</button>
+
+      <button class="btn-outline" id="lockAgainBtn" style="margin-top:48px;">🔒 Lock Again</button>
     </div>
   </section>
-
-
-  <!-- ══════════════════════════════════════
-       PAGE: CONTACT
-  ══════════════════════════════════════ -->
-  <section id="contact" class="page">
-    <div class="page-inner page-inner--narrow">
-      <div class="section-heading">
-        <h2 class="section-title">Contact</h2>
-        <div class="title-bar"></div>
-      </div>
-      <p class="body-text contact-intro">For commissions, exhibitions, collaborations, and press inquiries.</p>
-      <form class="contact-form" novalidate>
-        <div class="form-row">
-          <label class="form-label" for="fname">Name</label>
-          <input class="form-input" type="text" id="fname" placeholder="Your name" />
-        </div>
-        <div class="form-row">
-          <label class="form-label" for="femail">Email</label>
-          <input class="form-input" type="email" id="femail" placeholder="your@email.com" />
-        </div>
-        <div class="form-row">
-          <label class="form-label" for="fmsg">Message</label>
-          <textarea class="form-input form-textarea" id="fmsg" placeholder="Tell me about your project…"></textarea>
-        </div>
-        <button type="submit" class="btn-yellow">Send Message →</button>
-      </form>
-      <div class="contact-links">
-        <a href="mailto:you@email.com" class="contact-link">davide@email.com</a>
-        <a href="https://instagram.com/lufreespirit" class="contact-link" target="_blank">@lufreespirit ↗</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════ -->
-  <footer class="site-footer">
-    <span class="footer-name">The Art of Davide Morelli</span>
-    <span class="footer-copy">© <span id="year"></span>. All rights reserved.</span>
-    <div class="footer-links">
-      <a class="footer-link" data-page="portfolio">Portfolio</a>
-      <a class="footer-link" data-page="contact">Contact</a>
-    </div>
-  </footer>
 
 
   <!-- ══════════════════════════════════════
        PROJECT PAGE: LU FREE SPIRIT
   ══════════════════════════════════════ -->
-  <section id="project-comics" class="page project-page">
-    <div class="project-page__inner">
+  <section id="project-comics" class="page">
+    <div class="page-inner page-inner--wide">
 
-      <!-- Back + breadcrumb -->
-      <nav class="project-breadcrumb">
-        <a class="project-back" data-page="portfolio">
+      <nav class="breadcrumb">
+        <a class="breadcrumb__back" href="#portfolio" data-page="portfolio">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Portfolio
         </a>
-        <span class="project-breadcrumb__sep">/</span>
-        <span class="project-breadcrumb__current">Lu Free Spirit</span>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Lu Free Spirit</span>
       </nav>
 
-      <!-- Header -->
-      <header class="project-header">
-        <div class="project-header__meta">
-          <span class="project-tag">Comics Series</span>
-          <span class="project-tag">2022 — ongoing</span>
+      <header>
+        <div class="tag-row">
+          <span class="tag">Comics Series</span>
+          <span class="tag">2023-2026</span>
+
         </div>
         <h1 class="project-title">Lu Free Spirit</h1>
         <div class="title-bar"></div>
-        <p class="project-description">
-          Lu Free Spirit is an ongoing webcomic following a group of friends navigating
-          creativity, friendship, and everyday chaos. Each episode is hand-drawn with an
-          expressive line and a playful palette — part slice-of-life, part absurdist comedy.
-          The series is published regularly on Instagram <a href="https://instagram.com/lufreespirit" class="project-link" target="_blank">@lufreespirit</a>.
+        <p class="body-text" style="max-width:640px;margin-top:24px;">
+        Set during our master's years in Milan. Each week a new chapter. 
+        An ongoing story filled with recurring characters and questionable decisions. 
+        <br />
+        Available for free on Instagram — start reading now.
         </p>
       </header>
 
-      <!-- Pinterest-style masonry gallery -->
-      <div class="masonry-grid">
-        <!-- Replace src values with your actual episode/artwork images -->
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/01.jpg" alt="Lu Free Spirit — Episode 1" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/02.jpg" alt="Lu Free Spirit — Episode 2" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/03.jpg" alt="Lu Free Spirit — Episode 3" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/04.jpg" alt="Lu Free Spirit — Episode 4" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/05.jpg" alt="Lu Free Spirit — Episode 5" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/06.jpg" alt="Lu Free Spirit — Episode 6" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/07.jpg" alt="Lu Free Spirit — Episode 7" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/08.jpg" alt="Lu Free Spirit — Episode 8" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/comics/09.jpg" alt="Lu Free Spirit — Episode 9" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
+      <div class="masonry-grid" style="margin-top:56px;">
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_2930.JPG" alt="Lu Free Spirit — Episode 1"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3180.JPG" alt="Lu Free Spirit — Episode 2"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3210.JPG" alt="Lu Free Spirit — Episode 3"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3316.JPG" alt="Lu Free Spirit — Episode 4"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3369.JPG" alt="Lu Free Spirit — Episode 5"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3484.JPG" alt="Lu Free Spirit — Episode 6"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3541.JPG" alt="Lu Free Spirit — Episode 7"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3557.JPG" alt="Lu Free Spirit — Episode 8"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3594.JPG" alt="Lu Free Spirit — Episode 9"  loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3695.JPG" alt="Lu Free Spirit — Episode 10" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/LFS/IMG_3696.JPG" alt="Lu Free Spirit — Episode 11" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
       </div>
 
-      <!-- Footer CTA -->
-      <div class="project-footer-cta">
+      <div class="project-cta">
         <p class="body-text">Want to follow the series or commission a collaboration?</p>
-        <div class="project-footer-cta__btns">
+        <div class="project-cta__btns">
           <a href="https://instagram.com/lufreespirit" class="btn-yellow" target="_blank">Follow on Instagram ↗</a>
-          <a class="btn-outline" data-page="contact">Get in Touch</a>
+          <a class="btn-outline" href="#about" data-page="about">Get in Touch</a>
         </div>
       </div>
 
@@ -457,70 +414,51 @@
   <!-- ══════════════════════════════════════
        PROJECT PAGE: CARICATURES
   ══════════════════════════════════════ -->
-  <section id="project-illustration" class="page project-page">
-    <div class="project-page__inner">
+  <section id="project-illustration" class="page">
+    <div class="page-inner page-inner--wide">
 
-      <!-- Back + breadcrumb -->
-      <nav class="project-breadcrumb">
-        <a class="project-back" data-page="portfolio">
+      <nav class="breadcrumb">
+        <a class="breadcrumb__back" href="#portfolio" data-page="portfolio">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Portfolio
         </a>
-        <span class="project-breadcrumb__sep">/</span>
-        <span class="project-breadcrumb__current">Caricatures</span>
+        <span class="breadcrumb__sep">/</span>
+        <span class="breadcrumb__current">Caricatures</span>
       </nav>
 
-      <!-- Header -->
-      <header class="project-header">
-        <div class="project-header__meta">
-          <span class="project-tag">Commissioned Portraits</span>
-          <span class="project-tag">2021 — ongoing</span>
+      <header>
+        <div class="tag-row">
+          <span class="tag">Commissioned Works</span>
+          <span class="tag">Character Design</span>
+          <span class="tag">Illustration</span>
+          <span class="tag">Exaggerated Caricatures</span>
         </div>
         <h1 class="project-title">Caricatures</h1>
         <div class="title-bar"></div>
-        <p class="project-description">
-          A collection of commissioned caricature portraits created for graduation parties,
-          birthdays, and private events. Each piece is tailored to capture the personality
-          and likeness of the subject with a distinctive exaggerated style — warm, fun,
-          and immediately recognisable. Available for commissions; get in touch to discuss your event.
+        <p class="body-text" style="max-width:800px;margin-top:24px;">
+          In Italy, especially in the northern regions, there is a longstanding tradition
+          among university students. On the night of a graduation party, the graduate's
+          friends gather to create a large poster. The poster usually includes phrases,
+          anecdotes, photos, rhymes to complete, crosswords, and, most importantly, a large
+          caricature of the graduate in the center. During the party, the poster is hung
+          on a wall, and the graduate, dressed up in an embarassing costume and with a
+          bottle of alcohol taped to their hand, must read it aloud and complete the games
+          and challenges. Each time they make a mistake, they have to take a drink.
         </p>
       </header>
 
-      <!-- Pinterest-style masonry gallery -->
-      <div class="masonry-grid">
-        <!-- Replace src values with your actual caricature images -->
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/01.jpg" alt="Caricature portrait 1" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/02.jpg" alt="Caricature portrait 2" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/03.jpg" alt="Caricature portrait 3" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/04.jpg" alt="Caricature portrait 4" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/05.jpg" alt="Caricature portrait 5" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/06.jpg" alt="Caricature portrait 6" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/07.jpg" alt="Caricature portrait 7" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
-        <div class="masonry-item">
-          <img src="images/portfolios/caricatures/08.jpg" alt="Caricature portrait 8" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/>
-        </div>
+      <div class="masonry-grid" style="margin-top:56px;">
+        <div class="masonry-item"><img src="images/portfolios/Caricatures/Caric1.JPG" alt="Caricature portrait 1" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/Caricatures/Caric2.JPG" alt="Caricature portrait 2" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/Caricatures/Caric3.JPG" alt="Caricature portrait 3" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/Caricatures/Caric4.JPG" alt="Caricature portrait 4" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
+        <div class="masonry-item"><img src="images/portfolios/Caricatures/Caric5.JPG" alt="Caricature portrait 5" loading="lazy" onerror="this.parentNode.classList.add('masonry-item--ph')"/></div>
       </div>
 
-      <!-- Footer CTA -->
-      <div class="project-footer-cta">
+      <div class="project-cta">
         <p class="body-text">Interested in a personalised caricature for your next event?</p>
-        <div class="project-footer-cta__btns">
-          <a class="btn-yellow" data-page="contact">Commission a Portrait →</a>
-          <a class="btn-outline" data-page="portfolio">Back to Portfolio</a>
+        <div class="project-cta__btns">
+          <a class="btn-yellow" href="#about" data-page="about">Commission a Portrait →</a>
         </div>
       </div>
 
@@ -528,11 +466,43 @@
   </section>
 
 
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="site-footer">
+    <span class="footer-copy">© <span id="year"></span>. All rights reserved.</span>
+  </footer>
+
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="lightbox__close" aria-label="Close">&times;</button>
+    <div class="lightbox__stage">
+      <img id="lightboxImg" class="lightbox__img" src="" alt=""/>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       ACHIEVEMENT TOAST
+       Slides up from the bottom once the user
+       has seen every portrait at least once.
+  ══════════════════════════════════════ -->
+  <div id="achievementToast" class="achievement-toast" role="status" aria-live="polite">
+    <div class="achievement-toast__icon" id="toastIcon">👁️</div>
+    <div class="achievement-toast__body">
+      <p class="achievement-toast__eyebrow">Achievement Unlocked</p>
+      <p class="achievement-toast__title" id="toastTitle">–</p>
+      <p class="achievement-toast__sub"   id="toastSub">–</p>
+    </div>
+    <button class="achievement-toast__close" id="achievementClose" aria-label="Dismiss">✕</button>
+  </div>
+
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // ── Page switching ────────────────────────────────────
+      // ── Page switching ──────────────────────────────────
       const ALL_PAGES    = document.querySelectorAll('.page');
       const ALL_NAVLINKS = document.querySelectorAll('[data-page]');
 
@@ -547,18 +517,15 @@
           setTimeout(() => target.classList.remove('page--enter'), 600);
         }
         ALL_NAVLINKS.forEach(l => {
-          if (l.dataset.page === id) l.classList.add('active');
+          if (l.dataset.page === id || l.dataset.alias === id) l.classList.add('active');
         });
 
-        // reset scroll on page change (but not home — let user scroll hero)
         if (id !== 'home') window.scrollTo(0, 0);
-
-        // reset title reveal if going back to home
         if (id === 'home') {
-          const rev = document.getElementById('titleReveal');
-          rev.classList.remove('is-visible');
+          document.getElementById('titleReveal').classList.remove('is-visible');
           window.scrollTo(0, 0);
         }
+        if (id === 'achievements') renderAchievements();
 
         updateNav();
         closeMobile();
@@ -568,74 +535,251 @@
         link.addEventListener('click', e => {
           e.preventDefault();
           const p = link.dataset.page;
-          if (p) showPage(p);
+          if (p) { showPage(p); history.pushState({ page: p }, '', `#${p}`); }
         });
       });
 
-      // ── Mobile hamburger ──────────────────────────────────
+      window.addEventListener('hashchange', () => {
+        const h = location.hash.slice(1) || 'home';
+        if (document.getElementById(h)) showPage(h);
+      });
+
+      const startHash = location.hash.slice(1);
+      if (startHash && document.getElementById(startHash)) showPage(startHash);
+
+      // ── Mobile hamburger ────────────────────────────────
       const ham = document.querySelector('.nav-hamburger');
       const mob = document.querySelector('.mobile-overlay');
-      ham.addEventListener('click', () => {
-        ham.classList.toggle('open');
-        mob.classList.toggle('open');
-      });
-      function closeMobile() {
-        ham.classList.remove('open');
-        mob.classList.remove('open');
-      }
+      ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
+      function closeMobile() { ham.classList.remove('open'); mob.classList.remove('open'); }
 
-      // ── Nav: glass, hide-on-scroll-down, title toggle ─────
-      const navEl    = document.getElementById('nav');
-      let navHasAppeared = false;
-      let lastScrollY = window.scrollY;
+      // ── Nav show/hide on scroll ─────────────────────────
+      const navEl = document.getElementById('nav');
+      let navHasAppeared = false, lastScrollY = window.scrollY;
       function updateNav() {
         const onHome = document.getElementById('home').classList.contains('page--active');
-        // Only run on home page
-        if (!onHome) {
-          navEl.classList.remove('nav-header--hidden');
-          navHasAppeared = false;
-          return;
-        }
-        // If nav hasn't appeared yet, keep it hidden until user scrolls down and then up
+        if (!onHome) { navEl.classList.remove('nav-header--hidden'); navHasAppeared = false; return; }
         if (!navHasAppeared) {
-          if (window.scrollY > 80 && window.scrollY < lastScrollY) {
-            navHasAppeared = true;
-            navEl.classList.remove('nav-header--hidden');
-          } else {
-            navEl.classList.add('nav-header--hidden');
-          }
-        } else {
-          navEl.classList.remove('nav-header--hidden');
-        }
+          if (window.scrollY > 80 && window.scrollY < lastScrollY) { navHasAppeared = true; navEl.classList.remove('nav-header--hidden'); }
+          else { navEl.classList.add('nav-header--hidden'); }
+        } else { navEl.classList.remove('nav-header--hidden'); }
         lastScrollY = window.scrollY;
       }
       window.addEventListener('scroll', updateNav, { passive: true });
       updateNav();
 
-      // ── Title reveal at bottom of hero image ─────────────
+      // ── Title reveal ────────────────────────────────────
       const titleReveal = document.getElementById('titleReveal');
+      new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) titleReveal.classList.add('is-visible'); });
+      }, { threshold: 0.15 }).observe(titleReveal);
 
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              titleReveal.classList.add('is-visible');
-            }
-          });
+      // ══════════════════════════════════════════════════
+      //  ACHIEVEMENT SYSTEM
+      // ══════════════════════════════════════════════════
+
+      // localStorage keys
+      const KEY_PORTRAITS = 'dm_seen_portraits';
+      const KEY_PORTRAIT_ACH = 'dm_achievement_shown';   // "I've seen you before!"
+      const KEY_EASTER      = 'dm_easter_egg_achieved';  // "What is this??"
+
+      // All achievement definitions — add new ones here
+      const ACHIEVEMENT_DEFS = [
+        {
+          key:   KEY_PORTRAIT_ACH,
+          icon:  '👀',
+          title: "Are you stalking me?",
+          desc:  "You've met every portrait of me. That's... an alarming amount of time you refreshed this page.",
+          hint:  "Keep visiting the About page..."
         },
-        { threshold: 0.15 }
-      );
-      revealObserver.observe(titleReveal);
+        {
+          key:   KEY_EASTER,
+          icon:  '📦',
+          title: "Aww! You broke it!",
+          desc:  "You broke the box. Hope you are happy with yourself.",
+          hint:  "There's something lurking at the bottom of the About page..."
+        }
+      ];
 
-      // ── Portfolio filter ───────────────────────────────────
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+      // ── Toast (generalized) ──────────────────────────────
+      const toast      = document.getElementById('achievementToast');
+      const toastClose = document.getElementById('achievementClose');
+      const toastIcon  = document.getElementById('toastIcon');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastSub   = document.getElementById('toastSub');
+      let toastTimer   = null;
+
+      function showToast({ icon, title, sub }) {
+        toastIcon.textContent  = icon;
+        toastTitle.textContent = title;
+        toastSub.textContent   = sub;
+        toast.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(dismissToast, 6000);
+      }
+      function dismissToast() { toast.classList.remove('is-visible'); clearTimeout(toastTimer); }
+      toastClose.addEventListener('click', dismissToast);
+
+      // ── Achievements page renderer ───────────────────────
+      function renderAchievements() {
+        const grid = document.getElementById('achievementsGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        ACHIEVEMENT_DEFS.forEach(def => {
+          const unlocked = !!localStorage.getItem(def.key);
+          const card = document.createElement('div');
+          card.className = 'achievement-card' + (unlocked ? ' achievement-card--unlocked' : '');
+          card.innerHTML = unlocked
+            ? `<div class="achievement-card__icon">${def.icon}</div>
+               <p class="achievement-card__title">${def.title}</p>
+               <p class="achievement-card__desc">${def.desc}</p>
+               <p class="achievement-card__hint"></p>`
+            : `<div class="achievement-card__locked-icon">?</div>
+               <p class="achievement-card__title">???</p>
+               <p class="achievement-card__desc">Achievement locked</p>
+               <p class="achievement-card__hint">${def.hint}</p>`;
+          grid.appendChild(card);
         });
+      }
+
+      // ── Reset button ─────────────────────────────────────
+      document.getElementById('resetAchievementsBtn').addEventListener('click', () => {
+        if (!confirm('Reset all achievements? This cannot be undone.')) return;
+        [KEY_PORTRAITS, KEY_PORTRAIT_ACH, KEY_EASTER].forEach(k => localStorage.removeItem(k));
+        // Also restore easter egg box if it was broken
+        const box = document.getElementById('easterBox');
+        const reveal = document.getElementById('easterReveal');
+        if (box)    { box.style.display = ''; box.dataset.cracks = '0'; easterClickCount = 0; }
+        if (reveal) { reveal.classList.remove('is-visible'); }
+        renderAchievements();
       });
 
-      // ── TOP SECRET password gate ──────────────────────────
+      // ══════════════════════════════════════════════════
+      //  PORTRAIT FRAME
+      // ══════════════════════════════════════════════════
+
+      const PORTRAIT_COUNT = 3;
+      const portraitVideo       = document.getElementById('portraitVideo');
+      const portraitImg         = document.getElementById('portraitImg');
+      const portraitPlaceholder = document.getElementById('portraitPlaceholder');
+
+      function loadSeenSet() {
+        try { const r = localStorage.getItem(KEY_PORTRAITS); return r ? new Set(JSON.parse(r)) : new Set(); }
+        catch { return new Set(); }
+      }
+      function saveSeenSet(set) {
+        try { localStorage.setItem(KEY_PORTRAITS, JSON.stringify([...set])); } catch {}
+      }
+
+      function markPortraitSeen(n) {
+        const seen = loadSeenSet();
+        seen.add(n);
+        saveSeenSet(seen);
+        if (seen.size >= PORTRAIT_COUNT && !localStorage.getItem(KEY_PORTRAIT_ACH)) {
+          localStorage.setItem(KEY_PORTRAIT_ACH, '1');
+          setTimeout(() => showToast({
+            icon:  '👀',
+            title: "Are you stalking me?",
+            sub:   "You've met every portrait of me. That's... an alarming amount of time you refreshed this page."
+          }), 1400);
+        }
+      }
+
+      function loadPortrait() {
+        const n    = Math.floor(Math.random() * PORTRAIT_COUNT) + 1;
+        const base = `images/portraits/port${n}`;
+
+        portraitVideo.style.opacity       = '1';
+        portraitImg.style.opacity         = '0';
+        portraitPlaceholder.style.display = 'block';
+        portraitImg.src   = `${base}.JPG`;
+        portraitVideo.src = `${base}.mp4`;
+        portraitVideo.load();
+
+        portraitVideo.play().then(() => {
+          portraitPlaceholder.style.display = 'none';
+          markPortraitSeen(n);
+        }).catch(() => {
+          portraitPlaceholder.style.display = 'none';
+          portraitVideo.style.opacity = '0';
+          portraitImg.style.opacity   = '1';
+          markPortraitSeen(n);
+        });
+      }
+
+      portraitVideo.addEventListener('ended', () => {
+        portraitVideo.style.opacity = '0';
+        portraitImg.style.opacity   = '1';
+      });
+      portraitVideo.addEventListener('error', () => {
+        portraitPlaceholder.style.display = 'none';
+        portraitVideo.style.opacity = '0';
+        portraitImg.style.opacity   = '1';
+      });
+      portraitImg.addEventListener('error', () => { portraitPlaceholder.style.display = 'none'; });
+
+      new MutationObserver(() => {
+        const aboutPage = document.getElementById('about');
+        if (aboutPage.classList.contains('page--active')) {
+          if (!aboutPage.dataset.portraitLoaded) { aboutPage.dataset.portraitLoaded = '1'; loadPortrait(); }
+        } else { delete aboutPage.dataset.portraitLoaded; }
+      }).observe(document.getElementById('about'), { attributes: true, attributeFilter: ['class'] });
+
+      // ══════════════════════════════════════════════════
+      //  EASTER EGG BOX
+      // ══════════════════════════════════════════════════
+      const easterBox    = document.getElementById('easterBox');
+      const easterReveal = document.getElementById('easterReveal');
+      const MAX_CLICKS   = 7;
+      let easterClickCount = 0;
+
+      function handleEasterClick() {
+        if (easterClickCount >= MAX_CLICKS) return;
+        easterClickCount++;
+
+        // Remove animation classes so they can be re-applied
+        easterBox.classList.remove('is-shaking', 'is-breaking');
+        void easterBox.offsetWidth; // force reflow
+
+        if (easterClickCount === MAX_CLICKS) {
+          // Final click — break the box
+          easterBox.classList.add('is-breaking');
+          setTimeout(() => {
+            easterBox.style.display = 'none';
+            easterReveal.classList.add('is-visible');
+            if (!localStorage.getItem(KEY_EASTER)) {
+              localStorage.setItem(KEY_EASTER, '1');
+              showToast({
+                icon:  '📦',
+                title: "Aww! You broke it!",
+                sub:   "You broke the box. Hope you are happy with yourself."
+              });
+            }
+          }, 650);
+        } else {
+          // Clicks 1-6: shake + progressive cracks
+          // Click 1 = cracks=0 (shake only), clicks 2-6 = cracks 1-5
+          easterBox.dataset.cracks = String(Math.max(0, easterClickCount - 1));
+          easterBox.classList.add('is-shaking');
+          easterBox.addEventListener('animationend', () => {
+            easterBox.classList.remove('is-shaking');
+          }, { once: true });
+        }
+      }
+
+      easterBox.addEventListener('click', handleEasterClick);
+      easterBox.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleEasterClick(); }
+      });
+
+      // If box was already broken in a previous session, restore reveal state
+      if (localStorage.getItem(KEY_EASTER)) {
+        easterBox.style.display = 'none';
+        easterReveal.classList.add('is-visible');
+      }
+
+      // ── TOP SECRET password gate ────────────────────────
       const PASS    = 'password';
       const unlBtn  = document.getElementById('unlockBtn');
       const pwIn    = document.getElementById('passwordInput');
@@ -644,12 +788,9 @@
 
       unlBtn.addEventListener('click', tryUnlock);
       pwIn.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
-
       function tryUnlock() {
         if (pwIn.value === PASS) {
-          pwErr.style.display = 'none';
-          pwIn.value = '';
-          showPage('secretContent');
+          pwErr.style.display = 'none'; pwIn.value = ''; showPage('secretContent');
         } else {
           pwErr.style.display = 'block';
           pwIn.classList.add('shake');
@@ -659,44 +800,27 @@
       }
       lockBtn.addEventListener('click', () => showPage('topsecret'));
 
-      // ── Masonry image lightbox ─────────────────────────────
-      const lightbox     = document.getElementById('lightbox');
-      const lightboxImg  = document.getElementById('lightboxImg');
-      const lightboxClose= document.getElementById('lightboxClose');
+      // ── Lightbox ────────────────────────────────────────
+      const lightbox      = document.getElementById('lightbox');
+      const lightboxImg   = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
 
       document.addEventListener('click', e => {
         const item = e.target.closest('.masonry-item img');
         if (item && !item.closest('.masonry-item--ph')) {
-          lightboxImg.src = item.src;
-          lightboxImg.alt = item.alt;
-          lightbox.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
+          lightboxImg.src = item.src; lightboxImg.alt = item.alt;
+          lightbox.classList.add('is-open'); document.body.style.overflow = 'hidden';
         }
       });
-
       function closeLightbox() {
-        lightbox.classList.remove('is-open');
-        document.body.style.overflow = '';
+        lightbox.classList.remove('is-open'); document.body.style.overflow = '';
         setTimeout(() => { lightboxImg.src = ''; }, 300);
       }
-
       lightboxClose.addEventListener('click', closeLightbox);
-      lightbox.addEventListener('click', e => {
-        if (e.target === lightbox) closeLightbox();
-      });
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeLightbox();
-      });
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
     });
   </script>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
-    <button id="lightboxClose" class="lightbox__close" aria-label="Close">&times;</button>
-    <div class="lightbox__stage">
-      <img id="lightboxImg" class="lightbox__img" src="" alt="" />
-    </div>
-  </div>
 
 </body>
 </html>
